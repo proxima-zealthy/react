@@ -1,0 +1,59 @@
+.card-container{
+   
+    width: 300px;
+    margin: auto;
+   }
+   .article-body{
+       padding: 10px;
+        /* background:#ccc; */
+        position: relative;
+        height: auto;
+            box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12)
+   
+   }
+   
+   .article-card-title h2{
+       padding-top: 10px;
+       font-size: 16px;
+       text-align: left;
+   }
+   
+   .card-desription{
+       text-align: justify;
+       position: relative;
+   
+       
+   }
+   .card-desription p{
+       font-size: 12px;
+   
+   }
+   .article-views{
+       text-align: left;
+       font-size: 12px;
+   }
+   
+   .card-buttom{
+       overflow: hidden;
+       
+   }
+   
+   .sharebutton{
+       float:right;
+   }
+   
+   .likebutton{
+       float:left;
+       padding-right: 10px;
+   }
+   
+   .commentbutton{
+       float: left;
+   }
+   .card-image{
+       width:100%;
+   }
+   
+   .vedio-card{
+       width: 100%
+   }

@@ -1,0 +1,38 @@
+.container{
+    padding:30px!important;
+}
+.article-header{
+   text-align: left;
+   color: #655a5a;
+}
+.article-body{
+    text-align:left;
+    color: #928989
+}
+.article-banner-image{
+    width: 100%;
+    /*give only for desktop height: 400px;*/
+    display:block;
+}
+.article-tags{
+    display: flex;
+    padding-top: 10px
+    
+}
+.article-tags p {
+    padding: 10px;
+    border:solid 1px;
+    border-radius: 20px;
+    margin-left: 10px;
+    background:#e99cea;
+    font-size: 10px;
+}
+.article-tags a{
+    text-decoration: none!important;
+}
+p img{
+    width: 100%;
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
