@@ -1,0 +1,58 @@
+html {
+  font-size: 14px;
+}
+
+body {
+  color: $primary-color;
+  font-family: var(--font-family-sans-serif);
+}
+
+
+a {
+  color: var(--grey-text);
+}
+
+a:hover {
+  color: var(--black);
+}
+
+h1,
+h2,
+h3 {
+  margin: 2rem 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.7rem;
+}
+
+button {
+  background: transparent;
+  border-radius: 1.6rem;
+  border: 0.1rem solid $primary-color;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0.7rem 2rem;
+}
+
+button:disabled {
+  opacity: 0.3;
+}
+
+button:hover {
+  background: #fff;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--grey-border);
+  margin: 2rem 0;
+}

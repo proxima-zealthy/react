@@ -1,0 +1,39 @@
+.Page {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.Example {
+  background: #F6F8FA;
+  padding: 2rem;
+  border-radius: 0.4rem;
+
+  .Icon {
+    margin-right: 10px;
+  }
+}
+
+.BackgroundImgExample {
+  background-image: url(../assets/img/car.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 16rem;
+  max-width: 25rem;
+}
+
+.ImgExample {
+  max-width: 25rem;
+}
+
+.Member-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Member-info {
+  border-bottom: 1px solid var(--grey-border);
+  padding-bottom: 2rem;
+  flex-basis: 50%;
+  flex-shrink: 0;
+}
