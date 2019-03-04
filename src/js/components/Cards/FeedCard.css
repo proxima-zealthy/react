@@ -3,7 +3,7 @@
     width: 300px;
     margin: auto;
    }
-   .card-body{
+   .article-body{
        padding: 10px;
         /* background:#ccc; */
         position: relative;
@@ -29,7 +29,7 @@
        font-size: 12px;
    
    }
-   .article-card-views{
+   .article-views{
        text-align: left;
        font-size: 12px;
    }

@@ -3,6 +3,11 @@ import { Route, Switch } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import routes from 'routes';
 import NotFound from 'views/404';
+//import 'bootstrap/dist/css/bootstrap.min.css';
+//import '../../../node_modules/font-awesome/scss/font-awesome.min.scss';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faIgloo } from '@fortawesome/free-solid-svg-icons' 
 
 class App extends Component {
   render() {

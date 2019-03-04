@@ -1,0 +1,14 @@
+.comment{
+    height: 40px;
+    width: 250px;
+    border: 1px solid lightgray;
+    background: lightgray;
+    color: black;
+    border-radius: 70px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.comment:hover {
+    background: gray;
+    color: white;
+}

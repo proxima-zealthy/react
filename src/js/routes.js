@@ -1,7 +1,9 @@
 import Home from 'views/Home';
 import Dummy_Member from 'views/Examples/Members';
 import Dummy_Counter from 'views/Examples/Counter';
-import Article from "./views/article/ArticlePage";
+import Article from "views/articlePage/ArticlePage";
+//import Topic from 'views/topics/Topic'
+import About from 'views/topics/About/About'
 
 export const publicPath = '/';
 
@@ -9,6 +11,10 @@ export default {
   HOME: {
     path: publicPath,
     component: Home
+  },
+  TOPIC:{
+    path: `${ publicPath }topic`,
+    component: About
   },
   ARTICLE: {
     /*
