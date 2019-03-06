@@ -5,7 +5,7 @@ export class Commentoverlay extends Component {
   render() {
     return (
         <div>
-        <button className="comment">Start commenting...</button>
+        <button className="comment" style={{width:"200px"}}>comment here..</button>
         </div>
     )
   }

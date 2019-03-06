@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import routes from 'routes';
+import SearchiconSvg from 'svg/searchicon.svg'
 
 import DrawerToggleButton from '../SideDrawer/DrawerToggleButton';
 import 'Toolbar.scss';
@@ -13,14 +14,24 @@ export default props => (
       </div>
       <div className="toolbar__logo">
         <NavLink to={routes.HOME.path}>
-          The Logo
+          ZEALTHY
         </NavLink>
       </div>
 
       <div className="spacer"></div>
+      <div className="search-container">
+                <input type="text" placeholder="Search.." name="search"/>
+                <button type="submit"><SearchiconSvg/></button>
+      </div>
+      <div className="spacer"></div>
       <div className="toolbar_navigation-items">
         <ul>
           <li>
+          <NavLink to="/">
+              SIGN IN
+            </NavLink>
+          </li>
+        {/* <li>
             <NavLink to={routes.COUNTER.path}>
               Counter
             </NavLink>
@@ -29,7 +40,7 @@ export default props => (
             <NavLink to={routes.MEMBERS.path}>
               Members List
             </NavLink>
-          </li>
+          </li>*/}
         </ul>
       </div>
     </nav>

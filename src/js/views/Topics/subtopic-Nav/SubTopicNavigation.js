@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 //import logo from './logo.svg';
 import ScrollMenu from 'react-horizontal-scrolling-menu';
-import './SubTopicNavigation.css';
+import 'SubTopicNavigation.scss';
 import About from '../About/About'
 
 const list = [
@@ -54,7 +54,7 @@ class  SubTopicNavigation extends Component {
     this.menuItems = Menu(list.slice(0, list.length), this.state.selected);
   }
  componentWillMount(key){
-  key=<About/>
+  key=1
   this.setState({mytext:key})
  }
   componentDidUpdate(prevProps, prevState) {

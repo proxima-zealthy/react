@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import 'Bottom.scss'
-import Whatsapp from '../Actionbuttons/Whatsapp.js'
-import Like from '../Actionbuttons/Like.js'
-import Share from '../Actionbuttons/Share'
-import Commentoverlay from '../Actionbuttons/Commentoverlay'
+import HomeButton from '../Actionbuttons/HomeButton'
+import ExploreButton from '../Actionbuttons/ExploreButton'
+import CommunityButton from '../Actionbuttons/CommunityButton'
+import AskExpertButton from '../Actionbuttons/AskExpertButton'
 
-export default class ButtomNav extends Component {
+export default class TopicsBottom extends Component {
   render() {
     return (
       <footer>
@@ -16,17 +16,17 @@ export default class ButtomNav extends Component {
               <div className="footer-nav-items">
                 <ul>
                   <li>
-                    <Commentoverlay/>
+                    <HomeButton/>
                   </li>
                   
                   <li>
-                  <Like/>
+                  <ExploreButton/>
                   </li>
                   <li>
-                  <Share/>
+                  <CommunityButton/>
                   </li>
                   <li>
-                  <Whatsapp/>
+                  <AskExpertButton/>
                   </li>
                 </ul>
               </div>

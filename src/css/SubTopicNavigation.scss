@@ -1,18 +1,31 @@
 .menu-item {
-    padding: 0 40px;
+    padding: 0 10px;
     margin: 5px 10px;
     user-select: none;
     cursor: pointer;
     border: none;
+    width:100%;
+    
+    
   }
   .menu-item-wrapper.active {
-    border: 1px blue solid;
+    background: #6FCF97;
+    box-shadow: 0px 4px 13px rgba(0, 0, 0, 0.12);
+    border-radius: 30px;
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 19px;
+    font-size: 12px;
+
+    color: #FFFFFF;
+
   }
   .menu-item.active {
-    border: 1px green solid;
+    /*border: 1px green solid;*/
   }
   
-  .scroll-menu-arrow {
-    padding: 20px;
-    cursor: pointer;
-  }
+  
+ 
+  
+  

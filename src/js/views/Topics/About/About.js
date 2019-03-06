@@ -4,10 +4,11 @@ import SubTopic from './SubTopic/SubTopic'
 
 export class About extends Component {
   render() {
-    const topic=this.props.match.params.topicname
+    //const topic=this.props.match.params.topicname
     return (
       <div>
-        <SubTopic topic={topic}/>
+       { /*<SubTopic topic={topic}/>*/}
+       <SubTopic/>
       </div>
     )
   }

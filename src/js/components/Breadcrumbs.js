@@ -4,7 +4,7 @@ export class Breadcrumbs extends Component {
   render() {
     return (
       <div>
-      
+         <p>home/topic/topicname</p>
       </div>
     )
   }

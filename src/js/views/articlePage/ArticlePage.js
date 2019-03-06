@@ -4,10 +4,15 @@ import CommentBox from '../../components/commentBox/CommentBox.js'
 import ArticleBanner from '../../components/article/ArticleBanner'
 import ArticleTags from '../../components/article/ArticleTags'
 import ArticleHeading from '../../components/article/ArticleHeading'
+import ArticleAuthor from '../../components/article/AuthorDetails/ArticleAuthor'
+import ArticleAvatar from '../../components/article/AuthorDetails/AuthorAvatar'
 import ArticleBody from '../../components/article/ArticleBody'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import ArticleData from '../../mock-api/ArticleData.json'
 import Navigation from '../navigation/Navigation'
+import ButtomNav from '../../components/footerMobile/ButtomNav'
+import ViewsSvg from 'svg/views.svg'
+
 //import Data from '../../mock-api/ArticleData.json'
 
 
@@ -37,11 +42,19 @@ export class ArticlePage extends Component {
         <div className="article-container">
             <article>
             <div className="article">
-            <ArticleBanner image={bannerimage} />
             <Breadcrumbs/>
+            <ArticleBanner image={bannerimage} />
+            
             <ArticleHeading title={articletitle}/>
+            <div className="Authordetails-Area">
+                <div className="AuthorAvatar"><ArticleAvatar/></div>
+                <div className="AuthorName"><ArticleAuthor/></div>
+                <div className="views"><p><span><ViewsSvg/></span><span>12k</span></p></div>
+            </div>
             <ArticleBody body={articlebody}/>
             <ArticleTags/>
+        
+
             
 
           
@@ -50,6 +63,7 @@ export class ArticlePage extends Component {
             <div>
                 <CommentBox/>
             </div>
+            <div><ButtomNav/></div>
         </div>
         </div>
    

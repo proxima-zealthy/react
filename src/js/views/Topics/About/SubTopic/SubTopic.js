@@ -14,8 +14,10 @@ export class SubTopic extends Component {
       const article=ArticleData.map((articleArray,index)=>{return articleArray})
       //console.log(article[1].id)
       //console.log(this.props)
-      const topicNAme=this.props.topic
-      console.log(topicNAme)
+      //this.props.topic
+      //const topicNAme=1
+      //console.log(topicNAme)
+      //{article[topicNAme].articleimage}
     return (
         
      
@@ -23,7 +25,7 @@ export class SubTopic extends Component {
             <article>
             <div className="article">
                 <div className="article-banner">
-                    <img className="article-banner-image" src={article[topicNAme].articleimage} alt="article bannerimage"></img>
+                    <img className="article-banner-image" src={article[1].articleimage} alt="article bannerimage"></img>
                 </div>
                 <div className="article-tags">
                         <a href="/"><p>tag1</p></a>
@@ -31,15 +33,15 @@ export class SubTopic extends Component {
                         
                 </div>
                <div className="article-header" >
-                    <h1 className="article-heading">{article[topicNAme].articletitle}</h1>
-                    <p className="article-author">{article[topicNAme].author}</p>
+                    <h1 className="article-heading">{article[1].articletitle}</h1>
+                    <p className="article-author">{article[1].author}</p>
                     
                </div>
 
-               <div className="article-body">
+               <div className="article-body" styel={{textAlign:'justify'}}>
 
                <p>
-               {article[topicNAme].articlebody}   
+               {article[1].articlebody}   
                </p>
                
                </div>

@@ -1,7 +1,7 @@
 .article-container{
-    padding:0 5px 0 5px;
+    padding:0 12px 0 12px;
     position: relative;
-    top: -7px; 
+    top: -15px; 
 }
 .article-header{
    text-align: left;
@@ -13,10 +13,11 @@
     font-family: Oswald;
     font-style: normal;
     font-weight: normal;
-    line-height: 24px;
+    line-height: 28px;
     font-size: 20px;
 
-color: #4F4F4F;
+    color: #4F4F4F;
+
 
 }
 .article-author{
@@ -25,15 +26,16 @@ color: #4F4F4F;
 }
 .article-body{
     text-align:left;
-    font-family: 'Poppins',sans-serif;;
+    font-family: Hind;
     font-style: normal;
     font-weight: normal;
-    line-height: 18px;
-    font-size: 12px;
+    line-height: 26px;
+    font-size: 16px;
 
-color: #666666;
-}
+    color: #666666;
+    }
 .article-banner-image{
+    border-radius: 8px;
     width: 100%;
     /*give only for desktop height: 400px;*/
     display:block;
@@ -60,3 +62,36 @@ p img{
     padding-top: 20px;
     padding-bottom: 20px;
 }
+.Authordetails-Area{
+    width:100%;
+    height: 50px;
+
+    display:flex;
+
+    div{
+        display: inline;
+    }
+    p{
+        display: inline;
+    }
+
+}
+.AuthorAvata{
+    width:100%;
+}
+.AuthorName{
+    width:100%;
+}
+.views{
+    width: 100%;
+    text-align: right;
+    display:flex;
+    height: 50px;
+
+    p{
+        width: 100%;
+       flex: 1;
+    }
+   
+}
+

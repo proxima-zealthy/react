@@ -5,7 +5,6 @@ export class ArticleHeading extends Component {
     return (
         <div className="article-header" >
             <h1 className="article-heading">{this.props.title}</h1>
-            <p className="article-author">lorem ipsum </p>
             
         </div>
     )

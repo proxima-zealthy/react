@@ -8,10 +8,9 @@ export class Whatsapp extends Component {
   render() {
     return (
         <div>
-        <a href="/"><ViewsSvg/></a>
-        <a href="/"><LikeSvg/></a>
-        <a href="/"><WhatsappSvg/></a>
-        <a href="/"><HeartlikeSvg/></a>
+        
+        <a href="/"><WhatsappSvg /></a>
+        
         </div>
     )
   }

@@ -20,3 +20,16 @@
     height: 2px;
     background: white;
 }
+@media screen and (max-width: 600px) {
+    .toggle-button__line {
+        width:20px;
+        height: 2px;
+    }
+    .toggle-button{
+        width:20px;
+        height: 20px;
+    }
+
+    
+
+}
