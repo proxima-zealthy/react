@@ -4,6 +4,7 @@ import Dummy_Counter from 'views/Examples/Counter';
 import Article from "views/articlePage/ArticlePage";
 import Topic from 'views/Topics/Topic'
 import About from 'views/Topics/About/About'
+import ScrollTest from 'views/ScrollTest'
 
 
 export const publicPath = '/';
@@ -12,6 +13,10 @@ export default {
   HOME: {
     path: publicPath,
     component: Home
+  },
+  TEST:{
+    path: `${ publicPath }test`,
+    component: ScrollTest
   },
   TOPIC:{
     path: `${ publicPath }topic`,

@@ -14,7 +14,7 @@ const FeedCard = article => {
                   <img alt="article" className="card-image" src="https://material-ui.com/static/images/cards/paella.jpg"></img>
               </div>
               <div className="article-card-title">
-                  <h2>{post.tile}</h2>
+                  <h2>{post.title}</h2>
               </div>
               <div className="card-desription">
               <p>{post.body}</p>

@@ -5,8 +5,7 @@ export class AuthorAvatar extends Component {
   render() {
     return (
       
-       <p><img src={Avatar} alt='author' style={{width:'75px',
-        padding:'0'}} /></p> 
+       <img src={Avatar} alt='author' />
       
     )
   }

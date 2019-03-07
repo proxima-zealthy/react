@@ -26,10 +26,11 @@ export default props => (
       <div className="spacer"></div>
       <div className="toolbar_navigation-items">
         <ul>
-          <li>
+          <li className="Signin">
           <NavLink to="/">
               SIGN IN
             </NavLink>
+            
           </li>
         {/* <li>
             <NavLink to={routes.COUNTER.path}>

@@ -12,6 +12,7 @@ import ArticleData from '../../mock-api/ArticleData.json'
 import Navigation from '../navigation/Navigation'
 import ButtomNav from '../../components/footerMobile/ButtomNav'
 import ViewsSvg from 'svg/views.svg'
+import CommentBlock from   '../../components/CommentBlock/CommentBlock' 
 
 //import Data from '../../mock-api/ArticleData.json'
 
@@ -21,9 +22,26 @@ export class ArticlePage extends Component {
         super(props)
       
         this.state = {
-           articleArray:[]
+           articleArray:[],
+           bottomnav : true
         }
-    }    
+    } 
+    componentDidMount() {
+        window.addEventListener('scroll',()=>{
+            const isTop=window.scrollY> 715;
+            //console.log(window.scrollY)
+            if(isTop !== true){
+                this.setState({bottomnav:true});
+            }else{
+                this.setState({bottomnav:false});
+            }
+        })
+          
+    }
+    componentWillUnmount(){
+        window.removeEventListener('scroll');
+    }
+    
     
   render() {
     const article=ArticleData.map((articleArray,index)=>{return articleArray})
@@ -42,14 +60,20 @@ export class ArticlePage extends Component {
         <div className="article-container">
             <article>
             <div className="article">
-            <Breadcrumbs/>
+            <div><Breadcrumbs/></div>
             <ArticleBanner image={bannerimage} />
             
             <ArticleHeading title={articletitle}/>
             <div className="Authordetails-Area">
-                <div className="AuthorAvatar"><ArticleAvatar/></div>
-                <div className="AuthorName"><ArticleAuthor/></div>
-                <div className="views"><p><span><ViewsSvg/></span><span>12k</span></p></div>
+                <div className="author">
+                    <p className="AuthorAvatar"><ArticleAvatar/></p>
+                    <p className="AuthorName"><ArticleAuthor/></p>
+                </div>
+                
+                <div className="views">
+                    <p className="left"><ViewsSvg/></p>
+                    <p className="right">12k</p>
+                </div>
             </div>
             <ArticleBody body={articlebody}/>
             <ArticleTags/>
@@ -60,10 +84,10 @@ export class ArticlePage extends Component {
           
             </div>
             </article>
-            <div>
-                <CommentBox/>
+            <div style={{paddingBottom:'60px'}}>
+                <CommentBlock/>
             </div>
-            <div><ButtomNav/></div>
+            <div className={this.state.bottomnav?'bottomnav':'bottomnavdisabled'}><ButtomNav/></div>
         </div>
         </div>
    

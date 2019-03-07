@@ -23,6 +23,7 @@ class App extends Component {
             <Route path={ routes.MEMBERS.path } component={ routes.MEMBERS.component } />
             <Route path={ routes.TOPIC.path } component={ routes.TOPIC.component } />
             <Route path={ routes.ABOUT.path } component={ routes.ABOUT.component } />
+            <Route path={ routes.TEST.path } component={ routes.TEST.component } />
             <Route path='*' component={ NotFound } />
           </Switch>
         </div>
