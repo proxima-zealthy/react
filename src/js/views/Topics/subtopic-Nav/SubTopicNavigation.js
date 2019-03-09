@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 //import logo from './logo.svg';
 import ScrollMenu from 'react-horizontal-scrolling-menu';
 import 'SubTopicNavigation.scss';
-import About from '../About/About'
+import About from '../About'
 
 const list = [
   {name: 'item1'},

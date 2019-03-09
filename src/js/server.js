@@ -48,26 +48,29 @@ app.disable('x-powered-by');
 app.use('/client', express.static('build/client'));
 
 async function sendResponse(req, res, store) {
-  let matched_component;
+  let matchRoute;
 
   // Check matching of request url with defined routes and get the csomponent
   for (let key in routes) {
     const route = routes[key];
-    const match = matchPath(req.url, { path: route.path, exact: true });
+    const match = matchPath(req.url, { path: route.path, exact: false });
 
     if (match) {
-      matched_component = route.component;
+      matchRoute = {
+        component: route.component,
+        params: match.params
+      };
     }
   }
 
-  matched_component = matched_component || {};
+  matchRoute.component = matchRoute.component || {};
 
-  if (!matched_component.fetchData) {
-    matched_component.fetchData = () => new Promise(resolve => resolve());
+  if (!matchRoute.component.fetchData) {
+    matchRoute.component.fetchData = () => new Promise(resolve => resolve());
   }
 
   // Fetch async data
-  await matched_component.fetchData({ store });
+  await matchRoute.component.fetchData({ store, params: matchRoute.params });
 
   // Dehydrates the state
   const preloadedState = JSON.stringify(store.getState());
@@ -92,7 +95,7 @@ async function sendResponse(req, res, store) {
 
   // Context has url, which means `<Redirect>` was rendered somewhere
   if (context.url) {
-    res.redirect(301, context.url);
+    res.redirect(302, context.url);
   } else {
     // Send pre-rendered HTML as 200 response
     res.status(context.status || 200).send(serverHtml);

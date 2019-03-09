@@ -31,7 +31,7 @@ export class GetCategories extends Component {
     return (
       <div>
         {Categories.map(((Categories,index)=>{
-            return <ul className="categoty">
+            return <ul className="categoty" key={index}>
            
             <li>
             <button className="dropdown-btn" onClick={this.handleClick}>

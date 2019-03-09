@@ -7,8 +7,8 @@ import 'FeedCard.scss';
 const FeedCard = article => {
    // const title=article.props.map((post)=>(<p>{post.title}</p>))
     //const body=article.props.map((post)=>(<p>{post.body}</p>))
-    const card=article.props.map((post)=>(
-        <div className={`card-container`}>
+    const card=article.props.map((post, index)=>(
+        <div className={`card-container`} key={index}>
           <div className="card-body">
               <div >
                   <img alt="article" className="card-image" src="https://material-ui.com/static/images/cards/paella.jpg"></img>
