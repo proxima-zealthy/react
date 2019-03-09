@@ -1,9 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 const {
   paths,
-  outputFiles,
   rules,
   plugins,
   resolve,
@@ -16,13 +16,8 @@ const devServer = require('./webpack/dev-server').devServer;
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
-// Default client app entry file
-const entry = [
-  path.join(paths.javascript, 'client.js'),
-];
-
 plugins.push(
+  new ManifestPlugin(),
   // Builds index.html from template
   new HtmlWebpackPlugin({
     template: path.join(paths.source, 'index.html'),
@@ -35,7 +30,7 @@ plugins.push(
       removeComments: true,
       useShortDoctype: true,
     },
-  })
+  }),
 );
 
 if (IS_DEVELOPMENT) {
@@ -47,9 +42,6 @@ if (IS_DEVELOPMENT) {
     // No assets are emitted that include errors
     new webpack.NoEmitOnErrorsPlugin()
   );
-
-  // For IE babel-polyfill has to be loaded before react-hot-loader
-  entry.unshift('babel-polyfill');
 }
 
 // Webpack config
@@ -58,11 +50,13 @@ module.exports = {
   devtool: IS_PRODUCTION ? false : 'cheap-eval-source-map',
   context: paths.javascript,
   watch: !IS_PRODUCTION,
-  entry,
+  entry: {
+    client: path.join(paths.javascript, 'client.js'),
+  },
   output: {
     path: paths.build,
     publicPath: '/',
-    filename: outputFiles.client,
+    filename: IS_PRODUCTION ? `client/[name].[contenthash].js` : 'client/[name].js',
   },
   module: {
     rules,
@@ -81,7 +75,7 @@ module.exports = {
           chunks: 'initial',
           test: path.resolve(__dirname, 'node_modules'),
           name: 'vendor',
-          filename: outputFiles.vendor,
+          filename: IS_PRODUCTION ? 'client/[name].[contenthash].js' : 'client/[name].js',
           enforce: true,
         },
       },

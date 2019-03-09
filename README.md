@@ -6,10 +6,9 @@ npm start
 
 #### TODOS:
 1. Add Font icons support
-2. Add file hashing for cache busting
-3. Add build scripts
-4. Can add auto image optimization
-5. Add bundle analyzer for optimizations
+2. Add build scripts
+3. Can add auto image optimization
+4. Add bundle analyzer for optimizations
 
 
 #### Pattern:

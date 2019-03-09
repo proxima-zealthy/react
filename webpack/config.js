@@ -14,8 +14,6 @@ const paths = {
   build: path.join(__dirname, '../build'),
 };
 
-const outputFiles = require('./output-files').outputFiles;
-
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const SERVER_RENDER = process.env.SERVER_RENDER === 'true';
 const HYDRATE = process.env.HYDRATE === 'true';
@@ -30,7 +28,7 @@ const IS_PRODUCTION = NODE_ENV === 'production';
 const plugins = [
   // Extracts CSS to a file
   new MiniCssExtractPlugin({
-    filename: outputFiles.css,
+    filename: IS_PRODUCTION ? 'client/style.[contenthash].css' : 'client/style.css',
   }),
   // Injects env variables to our app
   new webpack.DefinePlugin({
@@ -48,6 +46,14 @@ if (IS_DEVELOPMENT) {
     // Enables pretty names instead of index
     new webpack.NamedModulesPlugin()
   );
+} else {
+  plugins.push(
+    // Hashes are based on the relative path of the module
+    new webpack.HashedModuleIdsPlugin({
+      hashFunction: 'sha256',
+      hashDigest: 'hex'
+    })
+  )
 }
 
 // ----------
@@ -93,7 +99,7 @@ const rules = [
       {
         loader: 'file-loader',
         options: {
-          name: 'client/assets/[name]-[hash].[ext]',
+          name: IS_PRODUCTION ? 'client/assets/[name].[hash].[ext]': 'client/assets/[name].[ext]',
         },
       },
     ],
@@ -106,7 +112,7 @@ const rules = [
       {
         loader: 'file-loader',
         options: {
-          name: 'client/fonts/[name]-[hash].[ext]',
+          name: IS_PRODUCTION ? 'client/fonts/[name].[hash].[ext]' : 'client/fonts/[name].[ext]',
         },
       },
     ],
@@ -199,7 +205,6 @@ module.exports = {
   IS_PRODUCTION,
   NODE_ENV,
   SERVER_RENDER,
-  outputFiles,
   paths,
   plugins,
   resolve,

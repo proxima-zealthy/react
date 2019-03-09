@@ -13,6 +13,8 @@ import configureStore from 'store';
 import getServerHtml from '../index.html.js';
 import App from 'views/App';
 
+const ManifestFileJSON = require('../../build/manifest.json');
+
 // Load SCSS
 import 'index.scss';
 
@@ -22,6 +24,22 @@ const port = 8080;
 
 // ENV
 const IS_DEVELOPMENT = app.get('env') === 'development';
+
+
+const outputFiles = { js: [], css: [] }; // In DEVELOPMENT mode, 'css' won't be extracted as separate chunk
+
+// Can be used to preload other set of assets as per chunk
+Object.keys(ManifestFileJSON).map(asset => {
+  if (asset.indexOf('.js') > -1) {
+    outputFiles.js.push(ManifestFileJSON[asset]);
+  } else if (asset.indexOf('.css') > -1) {
+    outputFiles.css.push(ManifestFileJSON[asset]);
+  }
+});
+
+if (IS_DEVELOPMENT) {
+  outputFiles.css.push('/client/style.css'); // Not able to share seed data between server and client manifestplugin
+}
 
 // Disabling "Powered by" headers
 app.disable('x-powered-by');
@@ -70,7 +88,7 @@ async function sendResponse(req, res, store) {
   const helmetData = Helmet.renderStatic();
 
   // Adds rest of the HTML page
-  const serverHtml = getServerHtml(appHtml, preloadedState, helmetData);
+  const serverHtml = getServerHtml(appHtml, preloadedState, helmetData, outputFiles);
 
   // Context has url, which means `<Redirect>` was rendered somewhere
   if (context.url) {
