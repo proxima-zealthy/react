@@ -13,6 +13,15 @@ import Tips from "./Tips";
 import HomeRemedies from "./HomeRemedies";
 import QnA from "./QnA";
 
+function getUrl(baseRouteWithTopicId, tabName) {
+  switch (tabName) {
+    case 'about': return <Link to={`${baseRouteWithTopicId}/about`}>About</Link>;
+    case 'tips': return <Link to={`${baseRouteWithTopicId}/tips`}>Tips</Link>;
+    case 'videos': return <Link to={`${baseRouteWithTopicId}/videos`}>Videos</Link>;
+    case 'qa': return <Link to={`${baseRouteWithTopicId}/qa`}>QnA</Link>;
+    case 'home_remedies': return <Link to={`${baseRouteWithTopicId}/home_remedies`}>Home Remedies</Link>;
+  }
+}
 
 @withRouter
 @connect(state => ({ ...state.topic }), {
@@ -48,14 +57,23 @@ export default class Topics extends Component {
   renderTabsList() {
     const topicId = this.props.match.params.id;
     const baseRouteWithTopicId = routes.TOPIC.path.replace(':id', topicId);
+    const { data } = this.props;
+    const TABSList = [];
 
-    return [
-      <Link to={`${baseRouteWithTopicId}/about`}>About</Link>,
-      <Link to={`${baseRouteWithTopicId}/videos`}>Videos</Link>,
-      <Link to={`${baseRouteWithTopicId}/home_remedies`}>Home Remedies</Link>,
-      <Link to={`${baseRouteWithTopicId}/tips`}>Tips</Link>,
-      <Link to={`${baseRouteWithTopicId}/qa`}>QnA</Link>,
-    ];
+    // Safe check if data fetching failed
+    if (!data) {
+      return TABSList;
+    }
+
+    data.tabs.forEach(t => {
+      const tabLink = getUrl(baseRouteWithTopicId, t);
+
+      if (tabLink) {
+        TABSList.push(tabLink);
+      }
+    });
+
+    return TABSList;
   }
 
   render() {
