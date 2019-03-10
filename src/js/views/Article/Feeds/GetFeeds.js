@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import FeedCard from '../../Cards/FeedCard';
+import FeedCard from 'components/Cards/FeedCard';
 
 export class GetFeeds extends Component {
     constructor(props) {
@@ -8,16 +8,12 @@ export class GetFeeds extends Component {
         this.state = {
            feeds:[]
         }
-       
-        
       }
   
-      componentWillMount(){
-          
-          fetch("https://jsonplaceholder.typicode.com/posts").then(res=> res.json())
-          .then(data => this.setState({feeds: data}));
-          
-      }
+    componentWillMount(){
+        fetch("https://jsonplaceholder.typicode.com/posts").then(res=> res.json())
+        .then(data => this.setState({feeds: data}));
+    }
       
       
     render() {

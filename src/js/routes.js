@@ -1,7 +1,7 @@
 import Home from 'views/Home';
 import Dummy_Member from 'views/Examples/Members';
 import Dummy_Counter from 'views/Examples/Counter';
-import Article from "views/articlePage/ArticlePage";
+import Article from "views/Article";
 import Topics from 'views/Topics'
 import ScrollTest from 'views/ScrollTest'
 import About from "./views/Topics/About";
@@ -33,7 +33,7 @@ export default {
     * Example route2: /article
     * Inside Article, use `this.props.location.match.params.article_name` and value will be "acne", or "diabetes" or undefined"
     * */
-    path: `${ publicPath }article/:article_name`,
+    path: `${ publicPath }article/:id`,
     component: Article
   },
   COUNTER: {

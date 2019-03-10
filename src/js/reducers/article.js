@@ -1,0 +1,44 @@
+import MOCKAPI from 'mock-api';
+import mockArticleData from 'mock-api/article';
+
+const GET_ARTICLE = 'GET_ARTICLE';
+
+export function fetchArticleById(id) {
+  return {
+    type: GET_ARTICLE,
+    payload: MOCKAPI(mockArticleData(id)) // Promise based redux example
+  };
+}
+
+const initialState = {
+  loading: false,
+  error: null,
+  data: null
+};
+
+export default function(state = initialState, action) {
+  switch (action.type) {
+    case `${GET_ARTICLE}::PENDING`:
+      return {
+        ...initialState,
+        loading: true
+      };
+
+    case `${GET_ARTICLE}::ERROR`:
+      return {
+        ...state,
+        loading: false,
+        error: action.error.message,
+      };
+
+    case `${GET_ARTICLE}::SUCCESS`:
+      return {
+        ...state,
+        loading: false,
+        data: action.payload,
+      };
+
+    default:
+      return state;
+  }
+}
