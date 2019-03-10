@@ -86,7 +86,8 @@ export default class Topics extends Component {
 
     return (
       <div className="Topic-container">
-        <Tabs tabsList={TABS_LIST} customClass="TopicTabs" />
+        <Tabs tabsList={TABS_LIST} customClass="Topic-Tabs" />
+
         <Switch>
           <Route exact path={`${ baseRoute}/about`} component={ About } />
           <Route exact path={`${ baseRoute }/home_remedies`} component={ HomeRemedies } />
@@ -96,7 +97,7 @@ export default class Topics extends Component {
           <Redirect from={`${ baseRoute }*`} to={`${ baseRouteWithTopicId}/about`}/>
         </Switch>
 
-        <TopicsBottom/>
+        <TopicsBottom />
       </div>
     )
   }
