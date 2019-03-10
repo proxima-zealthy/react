@@ -50,7 +50,9 @@ app.use('/client', express.static('build/client'));
 async function sendResponse(req, res, store) {
   let matchRoute;
 
-  // Check matching of request url with defined routes and get the csomponent
+  /*
+  * 1. Check matching of request url with defined routes and get the csomponent
+  * */
   for (let key in routes) {
     const route = routes[key];
     const match = matchPath(req.url, { path: route.path, exact: false });
@@ -65,15 +67,27 @@ async function sendResponse(req, res, store) {
 
   matchRoute.component = matchRoute.component || {};
 
+  /*
+  * 2. Fetch Data (static fetchData) if exist, otherwise dummy promise
+  * */
   if (!matchRoute.component.fetchData) {
     matchRoute.component.fetchData = () => new Promise(resolve => resolve());
   }
 
-  // Fetch async data
+  // Fetch async data (which is stored in redux store)
   await matchRoute.component.fetchData({ store, params: matchRoute.params });
+
+  /*
+  * 3. Get this data from store and prepare initial State for FE
+  * */
 
   // Dehydrates the state
   const preloadedState = JSON.stringify(store.getState());
+
+
+  /*
+  * 4. Prepare corresponding HTML of the matched route
+  * */
 
   // Context is passed to the StaticRouter and it will attach data to it directly
   const context = {};
@@ -87,11 +101,21 @@ async function sendResponse(req, res, store) {
     </Provider>
   );
 
+  /*
+  * 5. Prepare SEO data from rendered component above
+  * */
   // Get Helmet data from components
   const helmetData = Helmet.renderStatic();
 
-  // Adds rest of the HTML page
+  /*
+  * 6. Pass above html, initialState, SEO data and JS-CSS script files into Template(index.html.js)
+  * */
   const serverHtml = getServerHtml(appHtml, preloadedState, helmetData, outputFiles);
+
+
+  /*
+  * 7. Send above prepared things to FE
+  * */
 
   // Context has url, which means `<Redirect>` was rendered somewhere
   if (context.url) {
