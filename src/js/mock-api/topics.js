@@ -2,7 +2,7 @@ export default function prepareAboutForTopicId (id) {
   return {
     id: id,
     about: aboutContent,
-    videos: 'Random about page for this particular Topic Id:' + id,
+    videos: videos,
     tips: 'Random about page for this particular Topic Id:' + id,
     tabs: [
       'about',
@@ -53,3 +53,47 @@ const aboutContent = {
     }
   ]
 };
+
+const videos=[
+
+  {
+    "id":1,
+    "title":"video's title-1",
+    "desc":"videos content 1 goes here ...",
+    "view":"1233",
+    "likes":"12",
+    "thumbnail":"https://material-ui.com/static/images/cards/paella.jpg"
+
+  },
+  {
+    "id":2,
+    "title":"video's title-2 ",
+    "desc":"videos content 2 goes here ...",
+    "view":"1233",
+    "likes":"12",
+    "thumbnail":"https://material-ui.com/static/images/cards/paella.jpg"
+
+  },
+  {
+    "id":3,
+    "title":"video's title-3",
+    "desc":"videos content 3 goes here ...",
+    "view":"1233",
+    "likes":"12",
+    "thumbnail":"https://material-ui.com/static/images/cards/paella.jpg"
+
+  },
+  {
+    "id":4,
+    "title":"video's title-4 ",
+    "desc":"videos content 4 goes here ...",
+    "view":"1233",
+    "likes":"12",
+    "thumbnail":"https://material-ui.com/static/images/cards/paella.jpg"
+
+  }
+]
+
+
+  
+

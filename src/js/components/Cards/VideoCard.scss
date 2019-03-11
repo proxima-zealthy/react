@@ -1,0 +1,106 @@
+
+.videocard-container{
+    margin: auto;
+    width:300px;
+    background: #ffffff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+}
+.videocard-thumbnail{
+    background: #000000;
+    opacity: 0.5;
+    position: relative;
+    .playicon{
+        position: absolute;
+        top: 56px;
+        left: 119px;
+    }
+
+}
+.videocard-body{
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 16px;
+    font-size: 12px;
+
+    color: #000000;
+    h3{
+        margin: 10px 2px;
+    }
+
+
+}
+.videocard-buttom{
+    overflow: hidden;
+    
+}
+
+.sharebutton{
+    float:right;
+}
+
+.likebutton{
+    float:left;
+    padding-right: 10px;
+}
+
+.commentbutton{
+    float: left;
+}
+@media screen and (max-width: 600px) {
+    .videocard-container{
+        width:150px;
+        background: #ffffff;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+        border-radius: 12px;
+    }
+    .videocard-thumbnail{
+        background: #000000;
+        opacity: 0.5;
+        position: relative;
+        .playicon{
+            position: absolute;
+            top: 18px;
+            left: 49px;
+        }
+    
+    }
+    .videocard-body{
+        font-family: Oswald;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 16px;
+        //font-size: 12px;
+    
+        color: #000000;
+        h3{
+            margin: 10px 2px;
+            font-size: 12px;
+        }
+    
+    
+    }
+    .videocard-buttom{
+        
+        overflow: hidden;
+        
+    }
+    
+    .sharebutton{
+        width: 10px;
+        float:right;
+    }
+    
+    .likebutton{
+        width: 10px;
+        float:left;
+        padding-right: 10px;
+    }
+    
+    .commentbutton{
+        float: left;
+        width: 10px;
+        
+    }
+}

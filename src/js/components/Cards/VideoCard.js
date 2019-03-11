@@ -1,34 +1,26 @@
-import React, { Component } from 'react'
-import './CardStyle.css'
-
+import React, { Component } from 'react';
+import Vplay from 'img/vplay.png'
+import Like from '../Actionbuttons/Like'
+import Share from '../Actionbuttons/Share'
+import Whatsapp from '../Actionbuttons/Whatsapp'
+import './VideoCard.scss';
 export class VideoCard extends Component {
   render() {
-    return (
-      <div>
-          <div className={`card-container`}>
-            <div className="article-body">
-                <div className="article-card-title">
-                    <h2>the title goes here</h2>
-                </div>
-                <div className="vedio-card">
-                <iframe width="300" height="200" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-</iframe>
-</div>
-                
-                
-                <div className="article-views">
-                <p><span>3min read|</span><span>122 views</span></p>
-                </div>
-
-                <div className="card-buttom">
-                    <p> <span className="likebutton">like</span> <span className="commentbutton">comment</span><span className="sharebutton">share</span></p>
-                </div>
-
-            </div>
-          
+    const data=this.props.video;
+    //console.log('......................inside card',this.props.video);
+    return ( 
+      <div className="videocard-container">
+          <div className="videocard-thumbnail">
+            <img alt="vid" src={data.thumbnail}></img>
+            <img  className="playicon" alt="playicon" src={Vplay}></img>
           </div>
-        
-      </div>
+          <div className="videocard-body">
+              <h3>{data.desc}</h3>
+          </div>
+          <div className="videocard-buttom">
+                <p> <span className="likebutton"><Like/></span> <span className="commentbutton"><Share/></span><span className="sharebutton"><Whatsapp/></span></p>
+          </div>
+     </div>
     )
   }
 }
