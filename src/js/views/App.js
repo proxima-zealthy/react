@@ -8,7 +8,7 @@ import NotFound from 'views/404';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faIgloo } from '@fortawesome/free-solid-svg-icons'
-import Navigation from 'views/navigation/Navigation'
+import Navigation from '../components/Navigation/Navigation'
 
 class App extends Component {
   render() {
