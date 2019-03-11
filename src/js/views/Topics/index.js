@@ -2,16 +2,15 @@ import React, { Component } from 'react'
 import { Switch, Route, Link, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import routes, { TOPIC_ROUTES } from 'routes';
-import TopicsBottom from '../../components/footerMobile/TopicsBottom'
 import Tabs from 'components/Tabs';
-
-import 'TopicPage.scss'
-import { fetchTopicById } from "reducers/topic";
 import About from "./About";
 import Videos from "./Videos";
 import Tips from "./Tips";
 import HomeRemedies from "./HomeRemedies";
 import QnA from "./QnA";
+import { fetchTopicById } from "reducers/topic";
+import Footer from 'components/BottomnavMobile'
+import 'TopicPage.scss'
 
 function getUrl(baseRouteWithTopicId, tabName) {
   switch (tabName) {
@@ -97,7 +96,7 @@ export default class Topics extends Component {
           <Redirect from={`${ baseRoute }*`} to={`${ baseRouteWithTopicId}/about`}/>
         </Switch>
 
-        <TopicsBottom />
+        <Footer/>
       </div>
     )
   }

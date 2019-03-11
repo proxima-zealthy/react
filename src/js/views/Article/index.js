@@ -1,16 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-
-import CommentBox from 'components/commentBox/CommentBox.js'
 import ArticleBanner from './ArticleBanner'
 import ArticleTags from './ArticleTags'
 import ArticleHeading from './ArticleHeading'
 import ArticleAuthor from 'components/AuthorDetails/ArticleAuthor'
 import ArticleAvatar from 'components/AuthorDetails/AuthorAvatar'
 import ArticleBody from './ArticleBody'
-import Breadcrumbs from 'components/Breadcrumbs'
+import Breadcrumbs from '../../components/Breadcrumbs'
 import ArticleData from 'mock-api/ArticleData.json'
-import ButtomNav from 'components/footerMobile/ButtomNav'
+import Footer from 'components/BottomnavMobile'
 import ViewsSvg from 'svg/views.svg'
 import CommentBlock from   'components/CommentBlock/CommentBlock'
 import { fetchArticleById } from "reducers/article";
@@ -103,7 +101,7 @@ export default class Article extends Component {
         <div style={{paddingBottom:'60px'}}>
           <CommentBlock/>
         </div>
-        <div className={this.state.bottomnav?'bottomnav':'bottomnavdisabled'}><ButtomNav/></div>
+        <div className={this.state.bottomnav?'bottomnav':'bottomnavdisabled'}><Footer/></div>
       </div>
 
     )
