@@ -7,12 +7,10 @@ import ArticleAuthor from 'components/AuthorDetails/ArticleAuthor'
 import ArticleAvatar from 'components/AuthorDetails/AuthorAvatar'
 import ArticleBody from './ArticleBody'
 import Breadcrumbs from '../../components/Breadcrumbs'
-import ArticleData from 'mock-api/ArticleData.json'
 import Footer from 'components/BottomnavMobile'
 import ViewsSvg from 'svg/views.svg'
 import CommentBlock from   'components/CommentBlock/CommentBlock'
 import { fetchArticleById } from "reducers/article";
-
 import 'ArticlePage.scss';
 
 
@@ -47,6 +45,7 @@ export default class Article extends Component {
         .catch(err => {
           // TODO: Redirect to Not Found page for topics
           console.log('Display notification on error...', err);
+          //here sometimes its coming some times not ,so there must be problem in serverside  .. .........Aseem 
         });
     }
 
@@ -67,6 +66,8 @@ export default class Article extends Component {
 
   render() {
     const { data, loading, error } = this.props;
+    console.log(this.props)
+   
 
     return (
       <div className="Article-container">
@@ -92,15 +93,16 @@ export default class Article extends Component {
                 </div>
                 <ArticleBody body={data.body}/>
                 <ArticleTags tags={data.tags} />
+                <div style={{paddingBottom:'60px'}}>
+                  <CommentBlock/>
+                </div>
               </div>
             )
           }
         </article>
 
         {/**/}
-        <div style={{paddingBottom:'60px'}}>
-          <CommentBlock/>
-        </div>
+        
         <div className={this.state.bottomnav?'bottomnav':'bottomnavdisabled'}><Footer/></div>
       </div>
 
