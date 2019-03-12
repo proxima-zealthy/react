@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 @connect(state => ({ ...state.topic }))
 export class About extends Component {
   render() {
+    console.log(this.props)
     const aboutContent = this.props.data && this.props.data.about;
 
     return (

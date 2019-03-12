@@ -14,7 +14,7 @@ import { fetchArticleById } from "reducers/article";
 import 'ArticlePage.scss';
 
 
-@connect(state => ({ ...state.topic }), {
+@connect(state => ({ ...state.article }), {
   fetchArticleById
 })
 export default class Article extends Component {
@@ -65,10 +65,9 @@ export default class Article extends Component {
   }
 
   render() {
-    const { data, loading, error } = this.props;
-    console.log(this.props)
-   
-
+    const {loading, error } = this.props;
+    const data=this.props.data.content;
+   // console.log('whats in render................',data);
     return (
       <div className="Article-container">
         {/**/}
