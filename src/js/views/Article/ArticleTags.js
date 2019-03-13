@@ -2,11 +2,18 @@ import React, { Component } from 'react'
 
 export class ArticleTags extends Component {
   render() {
-    const { tags } = this.props;
-
+    console.log('.........................',this.props)
     return (
         <div className="Article-Tags-container">
-        <a href="/"><p>tag1</p></a>       
+        <ul style={{display:'inline'}}>
+        {
+          this.props.tags.map((tag)=>(
+           <li key={tag.id}> <a href="/">{tag.name}the tags</a></li>
+
+          ))
+        }
+      
+        </ul>      
         </div>
     )
   }

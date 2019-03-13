@@ -1,7 +1,10 @@
 export default function prepareArticleForId (id) {
   return {
     id: id,
-    content: articleContent(id)
+    content: articleContent(id),
+    views:'1500',
+    likes:'1200',
+    comments:'100'
   };
 }
 
@@ -13,24 +16,6 @@ const articleContent = (id) => ({
   "image":"https://cdn.makeawebsitehub.com/wp-content/uploads/2017/03/examples-of-blog.jpg",
   "author":"proxima",
   "thumbnail":"",
-  "navigationtabs":[
-    {
-      "id":1,
-      "tab-name":"about"
-    },
-    {
-      "id":2,
-      "tab-name":"home & remedies"
-    },
-    {
-      "id":3,
-      "tab-name":"Tips"
-    },
-    {
-      "id":3,
-      "tab-name":"Q & A"
-    }
-  ],
   "tags":[
     {
       "id":1,

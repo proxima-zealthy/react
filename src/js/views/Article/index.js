@@ -45,7 +45,6 @@ export default class Article extends Component {
         .catch(err => {
           // TODO: Redirect to Not Found page for topics
           console.log('Display notification on error...', err);
-          //here sometimes its coming some times not ,so there must be problem in serverside  .. .........Aseem 
         });
     }
 
@@ -67,7 +66,7 @@ export default class Article extends Component {
   render() {
     const {loading, error } = this.props;
     const data=this.props.data.content;
-   // console.log('whats in render................',data);
+    const views=this.props.data.views;
     return (
       <div className="Article-container">
         {/**/}
@@ -87,7 +86,7 @@ export default class Article extends Component {
 
                   <div className="views">
                     <p className="left"><ViewsSvg/></p>
-                    <p className="right">12k</p>
+                    <p className="right">{views}</p>
                   </div>
                 </div>
                 <ArticleBody body={data.body}/>

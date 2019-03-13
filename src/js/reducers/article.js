@@ -9,7 +9,7 @@ export function fetchArticleById(id) {
     type: GET_ARTICLE,
     payload: MOCKAPI(mockArticleData(id)) // Promise based redux example
   };
-}console.log()
+}
 
 const initialState = {
   loading: false,

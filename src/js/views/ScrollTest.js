@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from "react-dom";
 import Test from 'Test.scss'
+import Carousel from '../components/Carousel'
 
 
 export class ScrollTest extends Component {
@@ -37,9 +38,11 @@ export class ScrollTest extends Component {
                 <a href="/">Home</a>
                 <a href="#about">About</a>
                 <div>
-                    <p>
+                    <h1>my Carousel</h1>
+                    <div>
                         
-                    </p>
+                    <Carousel/>
+                    </div>
                 </div>
             </nav>
       </div>

@@ -7,7 +7,9 @@ export default function prepareAboutForTopicId (id) {
     tabs: [
       'about',
       'videos',
-      'tips'
+      'tips',
+      'Q & A',
+      'home & remedies'
     ],
   };
 }

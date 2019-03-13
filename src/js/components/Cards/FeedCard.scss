@@ -1,0 +1,159 @@
+
+.feedcard-container{
+    margin: auto;
+    width:300px;
+    background: #ffffff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+}
+.feedcard-thumbnail{
+    background: #000000;
+    position: relative;
+   
+
+}
+.feedcard-title{
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 16px;
+    //font-size: 12px;
+
+    color: #000000;
+    h3{
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        font-size: 12px;
+    }
+}
+.feedcard-body{
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 16px;
+    //font-size: 12px;
+
+    color: #000000;
+    h3{
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        font-size: 12px;
+    }
+}
+.feedcard-bottom{
+        
+    overflow: hidden;
+    display: flex;
+    height: 40px;
+    .feedcard-bottom-item-left{
+        flex:1;
+        position: relative;
+        top: 10px;
+        display: flex;
+        margin-right: 28px;
+        .feedcard-bottom-inner{
+            flex:1
+        }
+
+    }
+        .feedcard-bottom-item-right{
+            flex:1;
+            position: relative;
+            top: 10px;
+            display: flex;
+            margin-left: 28px;
+            .feedcard-bottom-inner{
+                flex:1
+            }
+    
+     }
+     
+ }
+
+
+
+.sharebutton{
+    float:right;
+}
+
+.likebutton{
+    float:left;
+    padding-right: 10px;
+}
+
+.commentbutton{
+    float: left;
+}
+@media screen and (max-width: 600px) {
+    .feedcard-container{
+        width:150px;
+        background: #ffffff;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+        border-radius: 12px;
+    }
+    .feedcard-thumbnail{
+        background: #000000;
+        position: relative;
+        
+    
+    }
+    .feedcard-title{
+        font-family: Oswald;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 16px;
+        //font-size: 12px;
+    
+        color: #000000;
+        h3{
+            padding: 0;
+            margin: 0;
+            text-align: left;
+            font-size: 12px;
+        }
+    }
+    .feedcard-body{
+        font-family: Oswald;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 16px;
+        //font-size: 12px;
+    
+        color: #000000;
+        h3{
+            padding: 0;
+            margin: 0;
+            text-align: left;
+            font-size: 12px;
+        }
+    }
+    .feedcard-bottom{
+        
+        overflow: hidden;
+        display: flex;
+        .feedcard-bottom-item{
+            flex:1;
+        }
+
+        
+    }
+    
+    .sharebutton{
+        width: 10px;
+        float:right;
+    }
+    
+    .likebutton{
+        width: 10px;
+        float:left;
+        padding-right: 10px;
+    }
+    
+    .commentbutton{
+        float: left;
+        width: 10px;
+        
+    }
+}
