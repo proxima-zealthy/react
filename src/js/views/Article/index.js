@@ -19,7 +19,6 @@ import 'ArticlePage.scss';
 })
 export default class Article extends Component {
   state = {
-    articleArray:[],
     bottomnav : true
   };
 
@@ -65,6 +64,7 @@ export default class Article extends Component {
 
   render() {
     const {loading, error } = this.props;
+    //console.log('.................inside render',this.props)
     const data=this.props.data.content;
     const views=this.props.data.views;
     return (
