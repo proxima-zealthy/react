@@ -17,6 +17,7 @@ export default class Breadcrumbs extends Component {
   }
  
   render() {
+    //here topicNav will be replaced by real data
     return (
       <div className="bd-menu">
           <NavLink to={routes.HOME.path}><i className="fas fa-arrow-left"></i></NavLink>

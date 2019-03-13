@@ -19,15 +19,15 @@ const articleContent = (id) => ({
   "tags":[
     {
       "id":1,
-      "tag-name":"tag1"
+      "tagname":"tag1"
     },
     {
       "id":2,
-      "tag-name":"tag2"
+      "tagname":"tag2"
     },
     {
       "id":3,
-      "tag-name":"tag3"
+      "tagname":"tag3"
     }
   ]
 });
