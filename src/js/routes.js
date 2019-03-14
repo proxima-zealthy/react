@@ -4,11 +4,6 @@ import Dummy_Counter from 'views/Examples/Counter';
 import Article from "views/Article";
 import Topics from 'views/Topics'
 import ScrollTest from 'views/ScrollTest'
-import About from "./views/Topics/About";
-import Videos from "./views/Topics/Videos";
-import QnA from "./views/Topics/QnA";
-import HomeRemedies from "./views/Topics/HomeRemedies";
-import Tips from "./views/Topics/Tips";
 
 
 export const publicPath = '/';

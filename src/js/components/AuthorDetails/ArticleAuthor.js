@@ -4,7 +4,7 @@ export class ArticleAuthor extends Component {
   render() {
     return (
       
-        <p>Author Name|Qualification</p>
+        <span >Author Name|Qualification</span>
       
     )
   }

@@ -13,6 +13,9 @@
     align-items: center;
     height: 100%;
     padding: 0 1rem;
+    button:hover {
+      background: none;
+    }
 }
 
 .toolbar_navigation-items ul {

@@ -1,12 +1,12 @@
 import MOCKAPI from 'mock-api';
-import mockFeedData from 'mock-api/feeds';
+import mockFeedsData from 'mock-api/feeds';
 
 const GET_FEEDS= 'GET_FEEDS';
 
 export function fetchAllFeeds() {
   return {
     type: GET_FEEDS,
-    payload: MOCKAPI(mockFeedData()) // Promise based redux example
+    payload: MOCKAPI(mockFeedsData()) // Promise based redux example
     
   };
 }

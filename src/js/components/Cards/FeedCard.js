@@ -4,22 +4,18 @@ import Like from '../Actionbuttons/Like'
 import Share from '../Actionbuttons/Share'
 import Whatsapp from '../Actionbuttons/Whatsapp'
 import './FeedCard.scss';
-export class feedCard extends Component {
+
+export default class FeedCard extends Component {
   render() {
-    //const data=this.props.feed;
-    const data={
-        "id":1,
-        "thumbnai":"hsjhd",
-        "desc" :"duhdueh"
-     };
+     const data=this.props.feedData;
     return ( 
        <div className="feedcard-container">
             <div>jhfjhf</div>
             <div className="feedcard-thumbnail">
-                <img alt="vid" src="https://material-ui.com/static/images/cards/paella.jpg"></img>
+                <img alt="vid" src={data.thumbnail}></img>
             </div>
             <div className="feedcard-title">
-              <h3>{data.desc}</h3>
+              <h3>{data.title}</h3>
             </div>
             <div className="feedcard-body">
               <h3>{data.desc}</h3>
@@ -40,4 +36,3 @@ export class feedCard extends Component {
   }
 }
 
-export default feedCard

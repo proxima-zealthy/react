@@ -11,8 +11,8 @@ import Footer from 'components/BottomnavMobile'
 import ViewsSvg from 'svg/views.svg'
 import CommentBlock from   'components/CommentBlock/CommentBlock'
 import { fetchArticleById } from "reducers/article";
+import routes, { TOPIC_ROUTES } from 'routes';
 import 'ArticlePage.scss';
-
 
 @connect(state => ({ ...state.article }), {
   fetchArticleById
@@ -64,9 +64,9 @@ export default class Article extends Component {
 
   render() {
     const {loading, error } = this.props;
-    //console.log('.................inside render',this.props)
     const data=this.props.data.content;
     const views=this.props.data.views;
+  
     return (
       <div className="Article-container">
         {/**/}
@@ -92,7 +92,8 @@ export default class Article extends Component {
                 <ArticleBody body={data.body}/>
                 <ArticleTags tags={data.tags} />
                 <div style={{paddingBottom:'60px'}}>
-                  <CommentBlock/>
+                  <CommentBlock />
+                 
                 </div>
               </div>
             )

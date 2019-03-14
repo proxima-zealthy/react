@@ -1,8 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import routes from 'routes';
-import SearchiconSvg from 'svg/searchicon.svg'
-
+import SearchiconSvg from 'svg/searchicon.svg';
 import DrawerToggleButton from '../SideDrawer/DrawerToggleButton';
 import 'Toolbar.scss';
 
