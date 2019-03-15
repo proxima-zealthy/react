@@ -4,7 +4,7 @@ export default function prepareArticleForId (id) {
     content: articleContent(id),
     views:'1500',
     likes:'1200',
-    comments:'100'
+    comments: comments(id),
   };
 }
 
@@ -30,4 +30,27 @@ const articleContent = (id) => ({
       "tagname":"tag3"
     }
   ]
+});
+const comments = (id) => ({
+  "id":id,
+  "comment":[
+    {
+      "id": 1,
+      "user":"username",
+      "text":"all the comments "
+    },
+    {
+      "id": 2,
+      "user":"username",
+      "text":"all the comments "
+    },
+    {
+      "id": 3,
+      "user":"username",
+      "text":"all the comments "
+    },
+
+]
+
+
 });

@@ -1,18 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import ArticleBanner from './ArticleBanner'
-import ArticleTags from './ArticleTags'
-import ArticleHeading from './ArticleHeading'
-import ArticleAuthor from 'components/AuthorDetails/ArticleAuthor'
-import ArticleAvatar from 'components/AuthorDetails/AuthorAvatar'
-import ArticleBody from './ArticleBody'
-import Breadcrumbs from '../../components/Breadcrumbs'
+import { Switch, Route, Link, withRouter, Redirect } from 'react-router-dom';
+import routes from 'routes';
 import Footer from 'components/BottomnavMobile'
-import ViewsSvg from 'svg/views.svg'
-import CommentBlock from   'components/CommentBlock/CommentBlock'
+import Comments from   'components/Comments'
 import { fetchArticleById } from "reducers/article";
-import routes, { TOPIC_ROUTES } from 'routes';
+import ArticleContent from './ArticleContent';
 import 'ArticlePage.scss';
+import 'CommentBlocks.scss'
 
 @connect(state => ({ ...state.article }), {
   fetchArticleById
@@ -64,46 +59,24 @@ export default class Article extends Component {
 
   render() {
     const {loading, error } = this.props;
-    const data=this.props.data.content;
-    const views=this.props.data.views;
-  
+    const data=this.props.data
+    const ArticleId = this.props.match.params.id;
+    const baseRouteWithArticleId = routes.ARTICLE.path.replace(':id', ArticleId);
     return (
-      <div className="Article-container">
-        {/**/}
-        <article>
-          {
-            data && (
-              <div className="article">
-                <Breadcrumbs/>
-                <ArticleBanner image={data.image} />
-
-                <ArticleHeading title={data.title}/>
-                <div className="Authordetails-Area">
-                  <div className="author">
-                    <p className="AuthorAvatar"><ArticleAvatar/></p>
-                    <p className="AuthorName"><ArticleAuthor/></p>
-                  </div>
-
-                  <div className="views">
-                    <p className="left"><ViewsSvg/></p>
-                    <p className="right">{views}</p>
-                  </div>
-                </div>
-                <ArticleBody body={data.body}/>
-                <ArticleTags tags={data.tags} />
-                <div style={{paddingBottom:'60px'}}>
-                  <CommentBlock />
-                 
-                </div>
-              </div>
-            )
-          }
-        </article>
-
-        {/**/}
+      <div>
+        {/* the body of article  */}
+        <ArticleContent data={data}/>
+        <div>
+          <Link to={`${baseRouteWithArticleId}/comments`}>Show comments</Link>
+        </div>
+        {/*switch the article and comment area  on clicking the above link ? */}
+        <Route exact path={`${ baseRouteWithArticleId}/comments`} component={ Comments } />
         
-        <div className={this.state.bottomnav?'bottomnav':'bottomnavdisabled'}><Footer/></div>
+        {/*bottom footer area */}
+        <div className={this.state.bottomnav?'bottomnav':'bottomnavdisabled'} style={{paddingTop:'60px'}}><Footer/></div>
       </div>
+        
+     
 
     )
   }
