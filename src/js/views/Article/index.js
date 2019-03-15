@@ -4,8 +4,8 @@ import { Switch, Route, Link, withRouter, Redirect } from 'react-router-dom';
 import routes from 'routes';
 import Footer from 'components/BottomnavMobile'
 import Comments from   'components/Comments'
-import { fetchArticleById } from "reducers/article";
 import ArticleContent from './ArticleContent';
+import { fetchArticleById } from "reducers/article";
 import 'ArticlePage.scss';
 import 'CommentBlocks.scss'
 
@@ -65,19 +65,19 @@ export default class Article extends Component {
     return (
       <div>
         {/* the body of article  */}
-        <ArticleContent data={data}/>
+
+        <Switch>
+          <Route exact path={`${ baseRouteWithArticleId}`} component={()=> <ArticleContent data={data}/>} />
+          <Route exact path={`${ baseRouteWithArticleId}/comments`} component={ Comments } />
+        </Switch>
+        
         <div>
           <Link to={`${baseRouteWithArticleId}/comments`}>Show comments</Link>
         </div>
-        {/*switch the article and comment area  on clicking the above link ? */}
-        <Route exact path={`${ baseRouteWithArticleId}/comments`} component={ Comments } />
-        
         {/*bottom footer area */}
         <div className={this.state.bottomnav?'bottomnav':'bottomnavdisabled'} style={{paddingTop:'60px'}}><Footer/></div>
       </div>
-        
-     
-
+      
     )
   }
 }
