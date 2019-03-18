@@ -96,7 +96,7 @@ export default class Topics extends Component {
           <Redirect from={`${ baseRoute }*`} to={`${ baseRouteWithTopicId}/about`}/>
         </Switch>
 
-        <Footer/>
+        <div style={{paddingTop:'60px'}}><Footer/></div>
       </div>
     )
   }

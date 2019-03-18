@@ -23,8 +23,7 @@ export default class Breadcrumbs extends Component {
           <NavLink to={routes.HOME.path}><i className="fas fa-arrow-left"></i></NavLink>
           <ul className="bd-menu-item">
               {TopicNav.map((menu) => {
-                return <NavLink to={routes.HOME.path}>
-                <li key={menu.id}>{menu.name}</li></NavLink> 
+                return <li key={menu.id}><NavLink to={routes.HOME.path}>{menu.name}</NavLink></li> 
               })}
          </ul>
       </div>

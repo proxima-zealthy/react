@@ -4,7 +4,7 @@ export default function prepareArticleForId (id) {
     content: articleContent(id),
     views:'1500',
     likes:'1200',
-    comments: comments(id),
+    comments: comments
   };
 }
 
@@ -31,26 +31,39 @@ const articleContent = (id) => ({
     }
   ]
 });
-const comments = (id) => ({
-  "id":id,
-  "comment":[
-    {
-      "id": 1,
-      "user":"username",
-      "text":"all the comments "
-    },
-    {
-      "id": 2,
-      "user":"username",
-      "text":"all the comments "
-    },
-    {
-      "id": 3,
-      "user":"username",
-      "text":"all the comments "
-    },
+export var comments= [
+  {
+    "id": 1,
+    "user":"username",
+    "text":"all the comments "
+  },
+  {
+    "id": 2,
+    "user":"username",
+    "text":"all the comments "
+  },
+  {
+    "id": 3,
+    "user":"username",
+    "text":"all the comments "
+  },
 
 ]
 
 
-});
+export function removeCommentById(commentId){
+  function remove(id){
+    for(var i = comments.length - 1; i >= 0; i--) {
+      if(comments[i].id === id) {
+        comments.splice(i,1);
+        break;
+      }
+  }
+  } 
+  
+  return remove(commentId);
+}
+
+
+
+

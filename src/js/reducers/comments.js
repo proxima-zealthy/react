@@ -1,26 +1,30 @@
 import MOCKAPI from 'mock-api';
-import mockArticleData from 'mock-api/article';
+import mockArticleData,{ removeCommentById }  from 'mock-api/article';
 
 const GET_COMMENTS = 'GET_COMMENTS';
 const ADD_COMMENT='ADD_COMMENT';
+const REMOVE_COMMENT='REMOVE_COMMENT';
 
-function addComment(){
-  return {
-    type: ADD_COMMENT,
-  };
-}
-export function fetchCommentsById(id) {
-  //console.log(MOCKAPI(mockArticleData(id)));here the payload returns the id and content
+
+
+export function fetchCommentsByArticleId(id) {
   return {
     type: GET_COMMENTS,
     payload: MOCKAPI(mockArticleData(id)) // Promise based redux example
   };
 }
+export function removeCommentByEntityId(id){
+  return {
+    type: REMOVE_COMMENT,
+    payload: MOCKAPI(removeCommentById(id))
+  }
+}
 
 const initialState = {
   loading: false,
   error: null,
-  data: null
+  data: null,
+
 };
 
 export default function(state = initialState, action) {
@@ -44,7 +48,25 @@ export default function(state = initialState, action) {
         loading: false,
         data: action.payload,
       };
+    case `${REMOVE_COMMENT}::PENDING`:
+      return {
+        ...initialState,
+        loading: true
+      };
+    case `${REMOVE_COMMENT}::SUCCESS`:
+      return {
+        ...state,
+        loading: false,
+        data: action.payload,
+      };
+    case `${REMOVE_COMMENT}::ERROR`:
+      return {
+        ...state,
+        loading: false,
+        error: action.error.message,
+      };
 
+  
     default:
       return state;
   }

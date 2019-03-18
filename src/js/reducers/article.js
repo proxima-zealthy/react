@@ -4,7 +4,7 @@ import mockArticleData from 'mock-api/article';
 const GET_ARTICLE = 'GET_ARTICLE';
 
 export function fetchArticleById(id) {
-  //console.log(MOCKAPI(mockArticleData(id)));here the payload returns the id and content
+  console.log(MOCKAPI(mockArticleData(id)));//here the payload returns the id and content
   return {
     type: GET_ARTICLE,
     payload: MOCKAPI(mockArticleData(id)) // Promise based redux example

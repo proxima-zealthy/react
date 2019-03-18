@@ -4,12 +4,14 @@ import 'Tabs.scss';
 
 export default props => {
   return (
-    <ul className={classList('Tabs', props.customClass)}>
-      {props.tabsList.map((tab, ix) => (
-        <li key={ix}>
-          {tab}
-        </li>
-      ))}
-    </ul>
+    <nav id="tabs">
+      <ul className={classList('Tabs', props.customClass)}>
+        {props.tabsList.map((tab, ix) => (
+          <li key={ix}>
+            {tab}
+          </li>
+        ))}
+      </ul>
+    </nav>
   )
 };

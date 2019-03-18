@@ -39,12 +39,12 @@ export class ScrollTest extends Component {
                 <a href="#about">About</a>
                 <div>
                     <h1>my Carousel</h1>
-                    <div>
-                        
-                    <Carousel/>
-                    </div>
+                    
                 </div>
             </nav>
+            <div>
+                <Carousel/>
+             </div>
       </div>
     )
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Categories from'../../mock-api/Categories.json'
-
+import { Link } from 'react-router-dom';
+import routes from 'routes';
 
 
 export class GetCategories extends Component {
@@ -30,24 +31,24 @@ export class GetCategories extends Component {
    
     return (
       <div>
+        <ul className="category" >
         {Categories.map(((Categories,index)=>{
-            return <ul className="category" >
-                        <li key={Categories.id} className="category-item">
-                            <button className="dropdown-btn" onClick={this.handleClick}>
-                              {Categories.title}
-                            <i className="fa fa-caret-down"></i>
-                            </button>
-                                    <div className={this.state.show ? 'dropdown-container  isOpen':'dropdown-container isClosed'}>
-                                      <ul>
-                                        <li key={1}> <a href="/">Acne</a></li>
-                                        <li key={2}><a href="/">Oily Skin</a></li>
-                                        <li key={3}><a href="/">Dry Skin</a></li>
-                                      </ul>
-                                    </div>
-                        </li>
-           
-                    </ul>
+            return 
+             <li key={Categories.id} className="category-item">
+                <button className="dropdown-btn" onClick={this.handleClick}>
+                  {Categories.title}
+                  <i className="fa fa-caret-down"></i>
+                </button>
+                  <div className={this.state.show ? 'dropdown-container  isOpen':'dropdown-container isClosed'}>
+                     <ul>
+                        <li key={1}><Link to="/topics/acne/about">Acne</Link></li>
+                        <li key={2}><a href="/">Oily Skin</a></li>
+                        <li key={3}><a href="/">Dry Skin</a></li>
+                     </ul>
+                  </div>
+              </li>          
           }))}
+        </ul>
        
       </div>
     )

@@ -4,6 +4,7 @@ import Dummy_Counter from 'views/Examples/Counter';
 import Article from "views/Article";
 import Topics from 'views/Topics'
 import ScrollTest from 'views/ScrollTest'
+import Comments from 'views/Comments'
 
 
 export const publicPath = '/';
@@ -39,4 +40,8 @@ export default {
     path: `${ publicPath }members`,
     component: Dummy_Member
   },
+  COMMENTS: {
+    path: `${ publicPath }article/:id/comments`,
+    component: Comments
+  }
 };
