@@ -12,10 +12,13 @@
   "main": "build/server.js",
   "scripts": {
     "clean": "rm -rf ./build",
+    "server:restart": "nodemon",
     "client:watch": "cross-env HYDRATE=\"true\" webpack",
     "server:watch": "cross-env SERVER_RENDER=\"true\" webpack --config webpack.config.server.js",
-    "server:restart": "nodemon",
+    "client:build": "npm run clean && cross-env HYDRATE=\"true\" cross-env NODE_ENV=\"production\" webpack",
+    "server:build": "cross-env SERVER_RENDER=\"true\" cross-env NODE_ENV=\"production\" webpack --config webpack.config.server.js",
     "start": "concurrently -c blue,cyan,yellow --names \"build-server,build-client,node-server\" --kill-others \"npm run server:watch\" \"npm run client:watch\" \"npm run server:restart\"",
+    "build": "npm run client:build && npm run server:build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "nodemonConfig": {
