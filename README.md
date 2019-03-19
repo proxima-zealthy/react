@@ -1,7 +1,15 @@
 To start server side rendering:
+
+##### For development
 ```
 npm install
 npm start
+```
+
+##### For production
+```
+npm run build
+node build/server.js
 ```
 
 #### TODOS:
