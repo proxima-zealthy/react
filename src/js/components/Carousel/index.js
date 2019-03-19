@@ -28,9 +28,9 @@ export default class Carousel extends Component {
         <div class="demo">
           <h2>Multiple Item</h2>
           <div data-name="Multiple Item" class="glider-contain multiple">
-            <div class="gradient-border-bottom">
-              <div class="gradient-border">
-                <div class="glider" id="glider-double">
+            <div className="gradient-border-bottom">
+              <div className="gradient-border">
+                <div className="glider" id="glider-double">
                   <div><h1>1</h1></div>
                   <div><h1>2</h1></div>
                   <div><h1>3</h1></div>
@@ -57,8 +57,7 @@ export default class Carousel extends Component {
             <div id="dots2"></div>
           </div>
           </div>
-            </section>
-          
+      </section>
     </div>
     )
   }

@@ -18,6 +18,7 @@ export default class Article extends Component {
     this.state = {
        bottomnav : true
     }
+    this.onScrollRemoveBottomNav=this.onScrollRemoveBottomNav.bind(this);
 } 
  
   static fetchData({ store, params }) {
@@ -28,6 +29,34 @@ export default class Article extends Component {
         console.log('Display notification on error...', err);
       }); // Dispatch action for store passed from server
   }
+
+   onScrollRemoveBottomNav(){
+    function isScrolledIntoView(el) {
+     
+      var elementTop = el.offsetTop;
+      var elementBottom = elementTop + el.offsetHeight;
+
+      var viewportTop = window.pageYOffset || document.documentElement.scrollTop;
+      var viewportBottom = viewportTop + window.innerHeight;
+
+      return elementBottom > viewportTop && elementTop < viewportBottom;
+    }
+    var el=document.getElementById("comment-block");
+    
+    var data=isScrolledIntoView(el);
+    if(data){
+      //console.log("i can find u",data)
+      this.setState({bottomnav:false});
+      window.innerHeight=window.innerHeight-60;
+    }
+    else{
+      //console.log("you are gone ",data)
+      this.setState({bottomnav:true});
+      window.innerHeight=window.innerHeight+60;
+    }  
+
+  }
+
 
   componentDidMount() {
     // Check if data already exits from server side state
@@ -44,39 +73,11 @@ export default class Article extends Component {
         });
     }
     
-
-    window.addEventListener('scroll',()=>{
-      function isScrolledIntoView(el) {
-       
-        var elementTop = el.offsetTop;
-        var elementBottom = elementTop + el.offsetHeight;
-
-        var viewportTop = window.pageYOffset || document.documentElement.scrollTop;
-        var viewportBottom = viewportTop + window.innerHeight;
-
-        return elementBottom > viewportTop && elementTop < viewportBottom;
-    }
-      var el=document.getElementById("comment-block");
-      
-      var data=isScrolledIntoView(el);
-      if(data){
-        
-        //console.log("i can find u",data)
-        this.setState({bottomnav:false});
-        window.innerHeight=window.innerHeight-60;
-      }
-      else{
-        //console.log("you are gone ",data)
-        this.setState({bottomnav:true});
-        window.innerHeight=window.innerHeight+60;
-      }
-      
-      
-    })
+    window.addEventListener('scroll',this.onScrollRemoveBottomNav)
   }
 
   componentWillUnmount(){
-    window.removeEventListener('scroll');
+    window.removeEventListener('scroll',this.onScrollRemoveBottomNav);
   }
 
   render() {
@@ -89,7 +90,7 @@ export default class Article extends Component {
       <div>
         {/* the body of article  */}
 
-        <ArticleContent data={articleData}/>
+        <ArticleContent data={ articleData }/>
         <div id="comment-block"className="comment-block">
           <ul>
             {comments.map(( comment )=>(
@@ -104,6 +105,7 @@ export default class Article extends Component {
             </div> 
           </NavLink>
         </div>
+        <ArticleContent data={ articleData }/>
         {/*bottom footer area */}
         <div className={this.state.bottomnav?'bottomnav':'bottomnavdisabled'} style={{paddingTop:'60px'}}><Footer/></div>
       </div>
