@@ -5,8 +5,8 @@ export default class ArticleBanner extends Component {
    // console.log(this.props)
     return (
         <div className="article-banner">
-        <img className="article-banner-image" src={this.props.image}></img>
-    </div>
+          <img className="article-banner-image" src={this.props.image}></img>
+        </div>
     )
   }
 }

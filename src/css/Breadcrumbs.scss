@@ -1,5 +1,7 @@
 .bd-menu{
     padding: 10px;
+    margin-top: -16px;
+    margin-bottom: 5px;
 }
 .bd-menu-item{
     padding: 10px 0;
@@ -10,7 +12,13 @@
         display: inline;
         padding-right: 2px;
         a{
-            color:#777777;
+            font-family: Oswald;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 15px;
+            text-decoration-line: underline;
+            color: #777777;
         }
     }
     li:before{

@@ -9,6 +9,8 @@ const ServerHTML = ({ appHtml, initialData, helmet, outputFiles }) => (
     <meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0' />
     <link rel='shortcut icon' type='image/x-icon' href={favicon} />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" />
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet"></link>
+    <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet"></link>
     {/*<title>Amazing React SSR Boilerplate with SEO</title>*/}
 
     {helmet.title.toComponent()}

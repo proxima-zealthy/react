@@ -1,135 +1,134 @@
 .toolbar{
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #27AE60;
-    height: 48px;  
-    z-index: 1; 
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #27AE60;
+  height: 48px;  
+  z-index: 1; 
 }
 
 .toolbar__navigation {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    padding: 0 1rem;
-    button:hover {
-      background: none;
-    }
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 1rem;
 }
 
 .toolbar_navigation-items ul {
-    list-style: none;
-    margin:0;
-    padding: 0;
-    display: flex;
+  list-style: none;
+  margin:0;
+  padding: 0;
+  display: flex;
 }
 
 .toolbar_navigation-items li {
-    padding: 0 0.5rem;
+  padding: 0 0.5rem;
 }
 .toolbar__logo {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 .toolbar__logo a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
 }
 
 .spacer {
-    flex: 1;
+  flex: 1;
 }
 .toolbar_navigation-items a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .toolbar_navigation-items a:hover, .toolbar_navigation-items a:active {
-    color: coral;
+  color: coral;
 }
 
 .search-container {
+  border-bottom: 1px solid #f2f2f2;
+  /*width: 10%;*/
+  margin-top: -5px;
+}
+
+.search-container input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border-bottom: 1px solid white;
+  border: none;
+  width: 60%;
+  background: transparent;
+  color: white;
+}
+
+::placeholder { 
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background-color: transparent;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background: green;
+}
+.Signin{
+  border-bottom: 1px solid white;
+}
+
+@media screen and (max-width: 600px) {
+  .search-container {
+    width:110px;
+    height: 30px;
+    /*display: inline;*/
     border-bottom: 1px solid #f2f2f2;
-    /*width: 10%;*/
   }
-  
-  .search-container input[type=text] {
-    padding: 6px;
-    margin-top: 8px;
-    font-size: 17px;
-    border-bottom: 1px solid white;
-    border: none;
-    width: 60%;
-    background: transparent;
-    color: white;
-  }
-
-  ::placeholder { 
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
-  }
-  
-  .search-container button {
-    float: right;
-    padding: 6px 10px;
-    margin-top: 8px;
-    margin-right: 16px;
-    background-color: transparent;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .search-container button:hover {
-    background: green;
-  }
-  .Signin{
-    border-bottom: 1px solid white;
-  }
-  
-  @media screen and (max-width: 600px) {
-    .search-container {
-      width:110px;
-      height: 30px;
-      /*display: inline;*/
-      border-bottom: 1px solid #f2f2f2;
-    }
-    .search-container input[type=text], .search-container button {
-      float: none;
-      height: 19px;
-      float: left;
-      margin: 0;
-      width: 50%;
-      padding: 0px;
-      font-size: 12px;
-      
-    }
-    .search-container{
-        button{
-            height: 19px;
-            display: block;
-            width: 50%;
-            float: right;
-            padding: 0;
-            text-align: right;
-        }
-    }
-    .search-container input[type=text] {
-        
-    }
-    .toolbar__logo a{
-        color: #f2f2f2;
-        /* text-decoration: solid; */
-        font-size: 12px;
-        font-weight: bold;
-        line-height: 19px;
-        font-style: normal;
-        font-family: sans-serif;
-
-    }
-        
+  .search-container input[type=text]{
+        /* float: none; */
+  height: 19px; 
+  /* float: left; */
+  /* margin: 0; */
+  width: 70%;
+  /* padding: 0px; */
+  font-size: 12px;
     
-  
   }
+  .search-container{
+      button{
+        height: 19px;
+        display: block;
+        width: 15%;
+        float: right;
+        padding: 0;
+        text-align: right;
+         margin-right: 0px;
+
+    
+      }
+  }
+  
+  .toolbar__logo a{
+      color: #f2f2f2;
+      /* text-decoration: solid; */
+      font-size: 12px;
+      font-weight: bold;
+      line-height: 19px;
+      font-style: normal;
+      font-family: sans-serif;
+
+  }
+      
+  
+
+}

@@ -1,8 +1,19 @@
-.article-container{
-    padding:0 12px 0 12px;
+.Article-container{
+    padding:10px 12px 0 12px;
     position: relative;
     top: -15px; 
 }
+.hr-line {
+    padding: 0px;
+    border: 0;
+    clear: both;
+    display: block;
+    width: 100%;
+    background-color: #ccc;
+    height: 1px;
+    margin: 0;
+    height: 1px;
+  }
 .article-header{
    text-align: left;
    color: #655a5a;
@@ -147,5 +158,206 @@ p img{
     }
     .right{
         float: right;
+    }
+}
+.quickbites-container{
+
+}
+.quickbites-header{
+    h2{
+        
+        margin: 5px;
+        padding: 0px;
+        font-family: EB Garamond;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 26px;
+        color: #666666;
+    }
+
+}
+.quickbites-body{
+    background: #FFE9F5;
+    border-radius: 5%;
+    padding: 0 5%;
+    ul{
+        padding: 10px;
+        color: #666666;
+    }
+    p{
+        font-family: EB Garamond;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 26px;
+        color: #666666;
+        margin: 0;
+    }
+}
+.sectionlist-container{
+
+}
+.sectionlist-header{
+    h2{
+        
+        margin: 5px;
+        padding: 0px;
+        font-family: EB Garamond;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 26px;
+        color: #666666;
+    }
+
+}
+.sectionlist-body{
+    background: #FFE9F5;
+    border-radius: 5%;
+    padding: 0 5%;
+    ol{
+        padding: 10px;
+        color: #666666;
+        a{
+            text-decoration: none;
+        }
+    }
+    p{
+        font-family: EB Garamond;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 26px;
+        color: #666666;
+        margin: 0;
+    }
+}
+
+.Article-section-container{
+    width:100%;
+}
+.article-section-heading{
+    width:100%;
+    margin: 10px 0;
+    background: rgba(218, 218, 218, 0.2);
+    display: flex;
+    border-radius: 8px;
+    .header-item-left{
+        width:20%;
+        padding: 5%;
+        .left-box{
+            width: 100%;
+            height: 100%;
+            background: #F2CCE2;
+            border-radius: 8px;
+        }
+        p{
+            margin: 0;
+            padding-top: 13px;
+            font-family: Hind;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 26px;
+            text-align: center;
+
+color: #FFFFFF;
+
+        }
+    }
+    .header-item-right{
+        width:80%;
+
+    }
+    h2{
+        font-family: Hind;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 26px;
+        color: #666666;
+        margin: 5px 5px;
+    }
+}
+.article-section-content{
+    margin: 10px 0;
+    p{
+        font-family: Hind;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 26px;
+        color: #666666;
+
+    }
+}
+#section-1 {
+  
+  }
+.Article-Tags-container{
+    ul{
+        display: flex;
+        padding: 5px;
+    }
+    li{
+        background: #b75264;
+        padding: 4px;
+        list-style: none;
+        color: white;
+        border-radius: 10px;
+        text-decoration: none;
+        margin: 5px;
+    }
+    a{
+        text-decoration: none;
+    }
+}
+.action-bar{
+    background-color:white;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
+    color:#ccc;
+    align-items: center;
+    //z-index: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-content: center;
+    padding: 0;
+}
+.action-bar-item{
+    flex:1;
+    text-align: center; 
+}
+.article-intro-heading{
+    width:100%;
+    margin: 10px 0;
+    background: rgba(218, 218, 218, 0.2);
+    display: flex;
+    border-radius: 8px;
+    h2{
+        font-family: Hind;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 26px;
+        color: #666666;
+        margin: 5px 5px;
+    }
+}
+.article-intro-content{
+    margin: 10px 0;
+    p{
+        font-family: Hind;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 26px;
+        color: #666666;
+
     }
 }

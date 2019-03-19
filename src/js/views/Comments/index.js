@@ -57,7 +57,7 @@ export default  class Comments extends Component {
                         <div className="date-time">
                             <p>12:43PM. 12th Jan '19</p>
                         </div>
-                        <div className="comment">
+                        <div className="user-comment">
                             <p>Its a lovely article. Very informative and useful.</p>
                         </div>
                         <div className="reply-btn">

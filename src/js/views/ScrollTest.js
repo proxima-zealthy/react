@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from "react-dom";
 import Test from 'Test.scss'
 import Carousel from '../components/Carousel'
-import Commentpage from './Comments/Commentpage';
+//import Commentpage from './Comments/Commentpage';
 
 
 export class ScrollTest extends Component {

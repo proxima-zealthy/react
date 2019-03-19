@@ -5,8 +5,14 @@ import routes from 'routes';
 import Footer from 'components/BottomnavMobile'
 import ArticleContent from './ArticleContent';
 import { fetchArticleById } from "reducers/article";
+import Whatsapp from '../../components/Actionbuttons/Whatsapp.js'
+import Like from '../../components/Actionbuttons/Like'
+import Share from '../../components/Actionbuttons/Share'
+import Commentoverlay from '../../components/Actionbuttons/Commentoverlay'
+import Breadcrumbs from '../../components/Breadcrumbs';
 import 'ArticlePage.scss';
-import 'CommentBlocks.scss'
+//import 'CommentBlocks.scss';
+
 
 @connect(state => ({ ...state.article }), {
   fetchArticleById
@@ -45,14 +51,14 @@ export default class Article extends Component {
     
     var data=isScrolledIntoView(el);
     if(data){
-      //console.log("i can find u",data)
-      this.setState({bottomnav:false});
-      window.innerHeight=window.innerHeight-60;
+      console.log("i can find u",data)
+      //this.setState({bottomnav:false});
+      //window.innerHeight=window.innerHeight-60;
     }
     else{
-      //console.log("you are gone ",data)
-      this.setState({bottomnav:true});
-      window.innerHeight=window.innerHeight+60;
+      console.log("you are gone ",data)
+      //this.setState({bottomnav:true});
+      //window.innerHeight=window.innerHeight+60;
     }  
 
   }
@@ -86,11 +92,21 @@ export default class Article extends Component {
     const ArticleId = this.props.match.params.id;
     const comments=articleData.comments;
     const baseRouteWithArticleId = routes.ARTICLE.path.replace(':id', ArticleId);
+    const BreadcrumbsItems=[ {"id":1, "name": "Skin"},{"id":2, "name": "Acne"},{"id":3, "name": "the article "}];
     return (
       <div>
+        <Breadcrumbs items={BreadcrumbsItems}/>
         {/* the body of article  */}
 
         <ArticleContent data={ articleData }/>
+        {/*here goes the footer overlay section inside the pagecontent */}
+        <div className="action-bar">
+            <div className="action-bar-item"><Commentoverlay/></div>
+            <div className="action-bar-item"><Share/></div>
+            <div className="action-bar-item" style={{marginTop: '15px'}}><Like/></div>
+            <div className="action-bar-item"><Whatsapp/></div>
+        </div>
+        {/*the latest comments area inside article page  */}
         <div id="comment-block"className="comment-block">
           <ul>
             {comments.map(( comment )=>(
@@ -99,14 +115,13 @@ export default class Article extends Component {
                 </li>
             ))}  
           </ul> 
-          <NavLink to="/article/id/comments">
+          <NavLink to={routes.COMMENTS.path}>
             <div style={{ width:'100%' }}>
               <button style={{ width:'inherit' }}>show all comments</button>
             </div> 
           </NavLink>
         </div>
-        <ArticleContent data={ articleData }/>
-        {/*bottom footer area */}
+        {/*bottom footer area as overlay */}
         <div className={this.state.bottomnav?'bottomnav':'bottomnavdisabled'} style={{paddingTop:'60px'}}><Footer/></div>
       </div>
       

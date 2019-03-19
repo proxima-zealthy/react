@@ -12,7 +12,13 @@ const articleContent = (id) => ({
   "id": id,
   "meta-tags":"",
   "title": "जयपुर इंडियन ऑयल डिपो अग्निकांड",
-  "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "body": ` ये गर्भनिरोध का सबसे आसान तरीका है, और ये आसानी से बाजार में उपलब्ध भी है। चाहे आप स्तनपान करा रही हो या नहीं ये तरीका आप कभी भी अपना सकती हैं। पुरुषों और महिलाओं दोनों के द्वारा इस्तेमाल किये जाने वाले कंडोम बाजार में उपलब्ध हैं।  महिलाओं के कंडोम योनि के अंदर और लेबिया  के बाहरी तरफ व्यवस्थित हो जाते हैं. हालांकि, हो सकता है ये आपको पुरुषों के कंडोम के समान सहज महसूस न हो।अगर सही प्रकार से इसका इस्तेमाल किया जाए तो, पुरुषों के कंडोम 98 % और महिलाओं के कंडोम 95 % तक कारगर साबित हो सकते हैं। ये गर्भनिरोध का सबसे आसान तरीका है,
+   और ये आसानी से बाजार में उपलब्ध भी है। चाहे आप स्तनपान करा रही हो या नहीं ये तरीका आप कभी भी अपना सकती हैं। 
+   पुरुषों और महिलाओं दोनों के द्वारा इस्तेमाल किये जाने वाले कंडोम बाजार में उपलब्ध हैं।  महिलाओं के कंडोम योनि के अंदर और लेबिया 
+    के बाहरी तरफ व्यवस्थित हो जाते हैं. हालांकि, हो सकता है ये आपको पुरुषों के कंडोम के समान सहज महसूस न हो।अगर सही प्रकार से इसका 
+    इस्तेमाल किया जाए तो, पुरुषों के कंडोम 98 % और महिलाओं के कंडोम 95 % तक कारगर साबित हो सकते हैं।
+    ये गर्भनिरोध का सबसे आसान तरीका है, और ये आसानी से बाजार में उपलब्ध भी है। चाहे आप स्तनपान करा रही हो या नहीं ये तरीका आप कभी भी अपना सकती हैं। पुरुषों और महिलाओं दोनों के द्वारा इस्तेमाल किये जाने वाले कंडोम बाजार में उपलब्ध हैं।  महिलाओं के कंडोम योनि के अंदर और लेबिया  के बाहरी तरफ व्यवस्थित हो जाते हैं. हालांकि, हो सकता है ये आपको पुरुषों के कंडोम के समान सहज महसूस न हो।
+अगर सही प्रकार से इसका इस्तेमाल किया जाए तो, पुरुषों के कंडोम 98 % और महिलाओं के कंडोम 95 % तक कारगर साबित हो सकते हैं।  `,
   "image":"https://cdn.makeawebsitehub.com/wp-content/uploads/2017/03/examples-of-blog.jpg",
   "author":"proxima",
   "thumbnail":"",

@@ -4,7 +4,7 @@ export class ArticleTags extends Component {
   render() {
     return (
         <div className="Article-Tags-container">
-        <ul style={{display:'inline'}}>
+        <ul>
         {
           this.props.tags.map((tag)=>(
            
