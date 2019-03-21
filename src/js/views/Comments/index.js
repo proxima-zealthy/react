@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { fetchCommentsByArticleId } from 'reducers/comments'
+import { fetchCommentsByArticleId,addCommentByEntity } from 'reducers/comments'
 import './Comment-page.scss'
 
 @connect(state => ({ ...state.comments }), {
@@ -8,6 +8,15 @@ import './Comment-page.scss'
 })
 
 export default  class Comments extends Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       comment:""
+    }
+    this.handleCommentChange=this.handleCommentChange.bind(this);
+  }
+  
   static fetchData({ store, params }) {
     const articleId = params.id;
     return store.dispatch(fetchCommentsByArticleId(articleId))
@@ -31,15 +40,21 @@ export default  class Comments extends Component {
         });
     }
   }
+  handleCommentChange(e) {
+    this.setState({ comment:e.target.value });
+  }
+
   addComment(e){
     e.preventDefault();
-    const author = this.author.value;
-    const text = this.text.value;
-    console.log("submitting comments",author,text);
+    const comment=e.target[0].value;
+    //addCommentByEntity(comment)
+    //console.log("comment: " +e.target[0].value);
+    
+    
   }
   render() {
-    const comments=this.props.data.comments
-    console.log(comments);
+    //const comments=this.props.data.comments
+    //console.log(comments);
     //const articleId = this.props.match.params.id;
     return (
       <div>
@@ -72,17 +87,16 @@ export default  class Comments extends Component {
                     </div>
                 </div>
         <div>
-          {comments.map((comment)=>(
+          {/*comments.map((comment)=>(
             <ul>
               <li><span>{ comment.user }</span>:<span>{ comment.text }</span><span>X</span></li>
             </ul>
-          ))}
+          ))*/}
         </div>
         <div>
-          <form onSubmit={this.addComment} ref={element => (this.commentForm = element)}>
-            <input type="text"  ref={element => (this.text = element)}/>
-            <input type="author"  ref={element => (this.author = element)} />
-            <input type="submit" hidden/>
+          <form onSubmit={this.addComment}>
+          <input type="text"name="username" ref={node => (this.inputNode = node)}/>
+            <button type="submit">comment</button>
           </form>
           
 

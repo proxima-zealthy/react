@@ -40,18 +40,18 @@ const articleContent = (id) => ({
 export var comments= [
   {
     "id": 1,
-    "user":"username",
-    "text":"all the comments "
+    "user":"prox",
+    "text":"i can do this "
   },
   {
     "id": 2,
-    "user":"username",
-    "text":"all the comments "
+    "user":"jack",
+    "text":"change is the only constant "
   },
   {
     "id": 3,
-    "user":"username",
-    "text":"all the comments "
+    "user":"rose",
+    "text":"life is beutiful "
   },
 
 ]
@@ -68,6 +68,17 @@ export function removeCommentById(commentId){
   } 
   
   return remove(commentId);
+}
+
+export function addComment(comment){
+  var commentid=comments.length+1;
+  newcomment={
+    "id":{commentid},
+    "user":"new user",
+    "text":{comment}
+  }
+  comments.push(newcomment)
+  return comments;
 }
 
 

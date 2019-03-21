@@ -28,7 +28,7 @@ export default props => (
           <li className="Signin">
           <NavLink to="/">
               SIGN IN
-            </NavLink>
+          </NavLink>
             
           </li>
         {/* <li>

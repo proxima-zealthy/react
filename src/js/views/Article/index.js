@@ -111,7 +111,7 @@ export default class Article extends Component {
           <ul>
             {comments.map(( comment )=>(
                 <li key={comment.id}>
-                  <p><span>{ comment.user }</span><span>{ comment.text }</span></p>
+                  <p><span>{ comment.user }</span>:<span>{ comment.text }</span></p>
                 </li>
             ))}  
           </ul> 
