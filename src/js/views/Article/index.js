@@ -22,7 +22,7 @@ export default class Article extends Component {
     super(props)
   
     this.state = {
-       bottomnav : true
+       hidden : false
     }
     this.onScrollRemoveBottomNav=this.onScrollRemoveBottomNav.bind(this);
 } 
@@ -53,7 +53,7 @@ export default class Article extends Component {
     if(getSection){
       console.log("i can find u",getSection)
       //console.log(window.pageYOffset)
-      this.setState({bottomnav:false});
+      this.setState({hidden:true});
       //window.innerHeight=window.innerHeight-60;
     }
     else{
@@ -63,78 +63,7 @@ export default class Article extends Component {
     }  
 
   }
-   
-  smoothScr(){
-    iterr : 30;
-    tm : null;
-    stopShow()
-    {
-      clearTimeout(this.tm); // stopp the timeout
-      this.iterr = 30; // reset milisec iterator to original value
-    };
-    getRealTop(el) // helper function instead of jQuery
-    {
-      var elm = el; 
-      var realTop = 0;
-      do
-      {
-        realTop += elm.offsetTop;
-        elm = elm.offsetParent;
-      }
-      while(elm);
-      return realTop;
-    };
-    getPageScroll() 
-    {
-      var pgYoff = window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop;
-      return pgYoff;
-    };
-    anim(id) // the main func
-    {
-      this.stopShow(); // for click on another button or link
-      var eOff, pOff, tOff, scrVal, pos, dir, step;
-
-      eOff = document.getElementById(id).offsetTop; // element offsetTop
-
-      tOff =  this.getRealTop(document.getElementById(id).parentNode); // terminus point 
-
-      pOff = this.getPageScroll(); // page offsetTop
-
-      if (pOff === null || isNaN(pOff) || pOff === 'undefined') pOff = 0;
-
-      scrVal = eOff - pOff; // actual scroll value;
-
-      if (scrVal > tOff) 
-      {
-        pos = (eOff - tOff - pOff); 
-        dir = 1;
-      }
-      if (scrVal < tOff)
-      {
-        pos = (pOff + tOff) - eOff;
-        dir = -1; 
-      }
-      if(scrVal !== tOff) 
-      {
-        step = ~~((pos / 4) +1) * dir;
-
-        if(this.iterr > 1) this.iterr -= 1; 
-        else this.itter = 0; // decrease the timeout timer value but not below 0
-        window.scrollBy(0, step);
-        this.tm = window.setTimeout(function()
-        {
-           smoothScr.anim(id);  
-        }, this.iterr); 
-      }  
-      if(scrVal === tOff) 
-      { 
-        this.stopShow(); // reset function values
-        return;
-      }
-  }
-}
-
-
+  
   componentDidMount() {
     // Check if data already exits from server side state
     if (!this.props.data) {
@@ -149,9 +78,6 @@ export default class Article extends Component {
           console.log('Display notification on error...', err);
         });
     }
-
-
-    
     window.addEventListener('scroll',this.onScrollRemoveBottomNav)
    
   }
@@ -197,7 +123,7 @@ export default class Article extends Component {
         </div>
         <ArticleContent data={ articleData }/>
         {/*bottom footer area as overlay */}
-          <BottomBar controllerClass={ this.state.bottomnav }>
+          <BottomBar controllerClass={ this.state.hidden }>
               <Commentoverlay/>
               <Whatsapp/>
               <Like/>
