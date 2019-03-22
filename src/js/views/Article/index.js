@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { NavLink,Switch, Route, Link, withRouter, Redirect } from 'react-router-dom';
 import routes from 'routes';
-import Footer from 'components/BottomnavMobile'
+import BottomBar from 'components/BottomnavMobile'
 import ArticleContent from './ArticleContent';
 import { fetchArticleById } from "reducers/article";
 import Whatsapp from '../../components/Actionbuttons/Whatsapp.js'
@@ -123,7 +123,13 @@ export default class Article extends Component {
         </div>
         <ArticleContent data={ articleData }/>
         {/*bottom footer area as overlay */}
-        <div className={this.state.bottomnav?'bottomnav':'bottomnavdisabled'} style={{paddingTop:'60px'}}><Footer/></div>
+          <BottomBar controllerClass={this.state.bottomnav}>
+              <Commentoverlay/>
+              <Whatsapp/>
+              <Like/>
+              <Share/>
+          </BottomBar>
+        
       </div>
       
     )

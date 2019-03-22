@@ -11,9 +11,9 @@ export default class LikeSection extends Component {
     }
     render() {
     return (
-         <div onClick={this.props.incrementLike} className={this.props.liked ? "fas fa-heart icon" : "far fa-heart icon"}>
-            <p>{this.props.likes}</p>
-         </div>     
+         <p style={{fontSize: '19px'}} onClick={this.props.incrementLike}  className={this.props.liked ? "fas fa-heart icon" : "far fa-heart icon"}>
+            <span>{this.props.likes}</span>
+         </p>     
     )
     }
 }

@@ -6,18 +6,21 @@
     width: 100%;
     height: 50px;
     color:#ccc;
-    align-items: center;
     z-index: 1;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    align-content: center;
-    padding: 0;
 }
 .bottomnav-item{
-    flex:1;
+    display: flex;
+    //display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     text-align: center;
+    position: relative;
+    top: 8px;
+    div{
+        flex:1;
+       
+    }
     
    
 }
+

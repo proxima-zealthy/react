@@ -4,7 +4,7 @@ import 'Commentarea.scss'
 export class Commentoverlay extends Component {
   render() {
     return (
-        <div>
+        <div className="comment-button">
         <button className="comment" style={{width:"170px"}}>comment here..</button>
         </div>
     )
