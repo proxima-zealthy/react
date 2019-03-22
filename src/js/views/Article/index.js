@@ -49,19 +49,90 @@ export default class Article extends Component {
     }
     var el=document.getElementById("comment-block");
     
-    var data=isScrolledIntoView(el);
-    if(data){
-      console.log("i can find u",data)
+    var getSection=isScrolledIntoView(el);
+    if(getSection){
+      console.log("i can find u",getSection)
+      //console.log(window.pageYOffset)
       this.setState({bottomnav:false});
       //window.innerHeight=window.innerHeight-60;
     }
     else{
-      console.log("you are gone ",data)
+      console.log("you are gone ",getSection)
       //this.setState({bottomnav:true});
       //window.innerHeight=window.innerHeight+60;
     }  
 
   }
+   
+  smoothScr(){
+    iterr : 30;
+    tm : null;
+    stopShow()
+    {
+      clearTimeout(this.tm); // stopp the timeout
+      this.iterr = 30; // reset milisec iterator to original value
+    };
+    getRealTop(el) // helper function instead of jQuery
+    {
+      var elm = el; 
+      var realTop = 0;
+      do
+      {
+        realTop += elm.offsetTop;
+        elm = elm.offsetParent;
+      }
+      while(elm);
+      return realTop;
+    };
+    getPageScroll() 
+    {
+      var pgYoff = window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop;
+      return pgYoff;
+    };
+    anim(id) // the main func
+    {
+      this.stopShow(); // for click on another button or link
+      var eOff, pOff, tOff, scrVal, pos, dir, step;
+
+      eOff = document.getElementById(id).offsetTop; // element offsetTop
+
+      tOff =  this.getRealTop(document.getElementById(id).parentNode); // terminus point 
+
+      pOff = this.getPageScroll(); // page offsetTop
+
+      if (pOff === null || isNaN(pOff) || pOff === 'undefined') pOff = 0;
+
+      scrVal = eOff - pOff; // actual scroll value;
+
+      if (scrVal > tOff) 
+      {
+        pos = (eOff - tOff - pOff); 
+        dir = 1;
+      }
+      if (scrVal < tOff)
+      {
+        pos = (pOff + tOff) - eOff;
+        dir = -1; 
+      }
+      if(scrVal !== tOff) 
+      {
+        step = ~~((pos / 4) +1) * dir;
+
+        if(this.iterr > 1) this.iterr -= 1; 
+        else this.itter = 0; // decrease the timeout timer value but not below 0
+        window.scrollBy(0, step);
+        this.tm = window.setTimeout(function()
+        {
+           smoothScr.anim(id);  
+        }, this.iterr); 
+      }  
+      if(scrVal === tOff) 
+      { 
+        this.stopShow(); // reset function values
+        return;
+      }
+  }
+}
 
 
   componentDidMount() {
@@ -78,8 +149,11 @@ export default class Article extends Component {
           console.log('Display notification on error...', err);
         });
     }
+
+
     
     window.addEventListener('scroll',this.onScrollRemoveBottomNav)
+   
   }
 
   componentWillUnmount(){
@@ -110,12 +184,12 @@ export default class Article extends Component {
         <div id="comment-block"className="comment-block">
           <ul>
             {comments.map(( comment )=>(
-                <li key={comment.id}>
+                <li key={ comment.id }>
                   <p><span>{ comment.user }</span>:<span>{ comment.text }</span></p>
                 </li>
             ))}  
           </ul> 
-          <NavLink to={routes.COMMENTS.path}>
+          <NavLink to={ routes.COMMENTS.path }>
             <div style={{ width:'100%' }}>
               <button style={{ width:'inherit' }}>show all comments</button>
             </div> 
@@ -123,7 +197,7 @@ export default class Article extends Component {
         </div>
         <ArticleContent data={ articleData }/>
         {/*bottom footer area as overlay */}
-          <BottomBar controllerClass={this.state.bottomnav}>
+          <BottomBar controllerClass={ this.state.bottomnav }>
               <Commentoverlay/>
               <Whatsapp/>
               <Like/>

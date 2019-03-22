@@ -7,6 +7,13 @@
     height: 50px;
     color:#ccc;
     z-index: 1;
+    bottom:100%;
+    opacity: 0;
+    transition: all 0.15s ease-in;
+    &:visible {
+        transform: translateY(-100%);
+        opacity: 1;
+      }
 }
 .bottomnav-item{
     display: flex;
@@ -20,6 +27,7 @@
         flex:1;
        
     }
+
     
    
 }
