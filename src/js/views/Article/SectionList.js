@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react'
 
 export default  class ArticleSectionList extends Component {
@@ -10,7 +11,7 @@ export default  class ArticleSectionList extends Component {
           </div>
           <div className="sectionlist-body">
             <ol>
-              <a href="#section-1" >
+              <a href="#target" >
               <li>
                 <p> हजारों वर्षो से बर्थ कंट्रोल के तरीकों का प्रयोग किया जा रहा है।</p>
               </li>

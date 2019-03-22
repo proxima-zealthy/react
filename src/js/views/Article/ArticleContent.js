@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import ArticleBanner from './ArticleBanner';
-import ArticleQuickBites from './ArticleQuickBites';
-import ArticleSectionList from './ArticleSectionList'
-import ArticleTags from './ArticleTags';
-import ArticleHeading from './ArticleHeading';
+import Banner from './Banner';
+import QuickBites from './QuickBites';
+import SectionList from './SectionList'
+import Tags from './Tags';
+import Heading from './Heading';
 import ArticleAuthor from 'components/AuthorDetails/ArticleAuthor';
 import ArticleAvatar from 'components/AuthorDetails/AuthorAvatar';
-import ArticleBody from './ArticleBody';
+import AllSection from './Sections';
 import ViewsSvg from 'svg/views.svg';
 
 
@@ -21,9 +21,9 @@ export default class ArticleContent extends Component {
           {
             article && (
               <div className="article">
-                <ArticleBanner image={ article.image } />
+                <Banner image={ article.image } />
 
-                <ArticleHeading title={ article.title }/>
+                <Heading title={ article.title }/>
                 {/*auther section */}
                 <div className="Authordetails-Area">
                   <div className="author">
@@ -36,7 +36,7 @@ export default class ArticleContent extends Component {
                   </div>
                 </div>
                 <hr className="hr-line" ></hr>
-                <ArticleQuickBites/>
+                <QuickBites/>
                 {/*article introduction  */}
                 <div className="Article-intro-container">
                     <div className="article-intro-heading">
@@ -46,9 +46,9 @@ export default class ArticleContent extends Component {
                         <p>{article.body}</p>
                     </div>
                 </div>
-                <ArticleSectionList/>
-                <ArticleBody body={ article.body }/>
-                <ArticleTags tags={ article.tags } />
+                <SectionList/>
+                <AllSection body={ article.body }/>
+                <Tags tags={ article.tags } />
                 
               </div>
             )

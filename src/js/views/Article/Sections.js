@@ -5,6 +5,8 @@ export default class ArticleBody extends Component {
    // data=this.props.body
 
     return (
+      <div className="section-wrapper">
+        <a name="target"> &nbsp;</a>
         <div id="section-1" className="Article-section-container">
           <div className="article-section-heading">
             <div className="header-item-left">
@@ -23,6 +25,7 @@ export default class ArticleBody extends Component {
               <p>{this.props.body}</p>
           </div>
         </div>
+      </div>
     )
   }
 }

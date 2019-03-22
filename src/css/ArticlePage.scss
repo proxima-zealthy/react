@@ -109,12 +109,6 @@ p img{
    
 }
 
-.bottomnav{
-    display: block;
-}
-.bottomnavdisabled{
-    display: none;
-}
 */
 
 .Authordetails-Area{
@@ -370,3 +364,12 @@ color: #FFFFFF;
 .comment-block{
     padding-bottom: 23px;
 }
+.section-wrapper{
+    position: relative;
+    a{
+        position: absolute; 
+        //left: 0px;
+        top: -60px;
+    }
+}
+

@@ -78,6 +78,8 @@ export default class Article extends Component {
           console.log('Display notification on error...', err);
         });
     }
+   
+
     window.addEventListener('scroll',this.onScrollRemoveBottomNav)
    
   }
@@ -128,8 +130,7 @@ export default class Article extends Component {
               <Whatsapp/>
               <Like/>
               <Share/>
-          </BottomBar>
-        
+          </BottomBar> 
       </div>
       
     )
