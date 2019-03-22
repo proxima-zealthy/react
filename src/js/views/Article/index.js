@@ -52,7 +52,7 @@ export default class Article extends Component {
     var data=isScrolledIntoView(el);
     if(data){
       console.log("i can find u",data)
-      //this.setState({bottomnav:false});
+      this.setState({bottomnav:false});
       //window.innerHeight=window.innerHeight-60;
     }
     else{
@@ -121,6 +121,7 @@ export default class Article extends Component {
             </div> 
           </NavLink>
         </div>
+        <ArticleContent data={ articleData }/>
         {/*bottom footer area as overlay */}
         <div className={this.state.bottomnav?'bottomnav':'bottomnavdisabled'} style={{paddingTop:'60px'}}><Footer/></div>
       </div>
