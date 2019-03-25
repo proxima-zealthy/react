@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import Banner from './Banner';
 import QuickBites from './QuickBites';
 import SectionList from './SectionList'
-import Tags from './Tags';
 import Heading from './Heading';
 import ArticleAuthor from 'components/AuthorDetails/ArticleAuthor';
 import ArticleAvatar from 'components/AuthorDetails/AuthorAvatar';
 import AllSection from './Sections';
 import ViewsSvg from 'svg/views.svg';
-
 
 export default class ArticleContent extends Component {
   render() {
@@ -48,7 +46,7 @@ export default class ArticleContent extends Component {
                 </div>
                 <SectionList/>
                 <AllSection body={ article.body }/>
-                <Tags tags={ article.tags } />
+                
                 
               </div>
             )

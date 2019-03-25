@@ -1,0 +1,37 @@
+figure{
+    //background:#ccc;
+    display:block;
+    margin:10px!important;
+    padding: 5px;
+    color:#828282;
+    .active{
+        color:#828282;
+    }
+    .left-1{
+        color:#828282;
+    }
+}
+.glider-contain{
+    width:100%;
+    margin-top:12%;
+    margin-bottom: 5%;
+}
+.glider-next{
+   // right: -50px;
+    top:50%;
+}
+.glider-next{
+    //left: -50px;
+    top:50%;
+}
+.glider-slide{
+    .visible{
+        color:#828282;
+    }
+    .active{
+        color:#828282;
+    }
+    .left-1{
+        color:#828282;
+    }
+} 

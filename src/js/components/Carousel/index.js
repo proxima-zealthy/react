@@ -1,64 +1,60 @@
-import React, { Component } from 'react'
-//import './Slider.scss';
+import React, { Component } from 'react';
+import FeedCard from '../../components/Cards/FeedCard';
+import './Slider.scss';
+import './main.scss';
 
 export default class Carousel extends Component {
 
   componentDidMount(){
     window.addEventListener('load', function () {
-        window.glides = new Glider(document.getElementById('glider-double'), {
-          slidesToShow: 5,
+        window.glides = new Glider(document.querySelector('.glider'), {
+          slidesToShow: 3,
           slidesToScroll: 5,
           draggable: true,
-          dots: '#dots2',
-          arrows: {
-            prev: '#glider-prev-2',
-            next: '#glider-next-2'
-          }
+          dots: '#dots',
+         
+          responsive: [
+            {
+              // screens greater than >= 775px
+              breakpoint: 775,
+              settings: {
+                // Set to `auto` and provide item width to adjust to viewport
+                slidesToShow: 'auto',
+                slidesToScroll: 'auto',
+                itemWidth: 150,
+                duration: 0.25
+              }
+            },{
+              // screens greater than >= 1024px
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                itemWidth: 150,
+                duration: 0.25
+              }
+            }
+          ]
+          
         })
       });
   }
   render() {
+    const allFeed =this.props.Dataforfeeds;
     
-    
-
     return (
-      <div id="main">
-      <section id="demos" class="main special">
-        
-        <div class="demo">
-          <h2>Multiple Item</h2>
-          <div data-name="Multiple Item" class="glider-contain multiple">
-            <div className="gradient-border-bottom">
-              <div className="gradient-border">
-                <div className="glider" id="glider-double">
-                  <div><h1>1</h1></div>
-                  <div><h1>2</h1></div>
-                  <div><h1>3</h1></div>
-                  <div><h1>4</h1></div>
-                  <div><h1>5</h1></div>
-                  <div><h1>6</h1></div>
-                  <div><h1>7</h1></div>
-                  <div><h1>8</h1></div>
-                  <div><h1>9</h1></div>
-                  <div><h1>10</h1></div>
-                  <div><h1>11</h1></div>
-                  <div><h1>12</h1></div>
-                  <div><h1>13</h1></div>
-                  <div><h1>14</h1></div>
-                  <div><h1>15</h1></div>
-                  <div><h1>16</h1></div>
-                  <div><h1>17</h1></div>
-                  <div><h1>18</h1></div>
-                </div>
-              </div>
-            </div>
-            <button role="button" aria-label="Previous" class="glider-prev" id="glider-prev-2"><i class="fa fa-chevron-left"></i></button>
-            <button role="button" aria-label="Next" class="glider-next" id="glider-next-2"><i class="fa fa-chevron-right"></i></button>
-            <div id="dots2"></div>
-          </div>
-          </div>
-      </section>
-    </div>
+      <div className={`glider-contain  multiple`}>
+        <div className="glider">
+                 {
+                    allFeed.map((feed)=>(
+                      <figure><FeedCard feedData={feed}/></figure>
+                    ) )
+                  }
+                
+        </div>
+        <div id="dots" className="glider-dots"></div>
+
+      </div>
     )
   }
 }

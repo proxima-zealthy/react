@@ -103,4 +103,17 @@
       display: block;
       width: 280px;
   }
+  form{
+      padding: 10px;
+  }
+  .addcomment{
+    input{
+        width: 100%;
+        border-radius: 8px;
+        background: #ccc;
+        /* margin: 20px; */
+        padding: 4px;
+    
+      }
+  }
   

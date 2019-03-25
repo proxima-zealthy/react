@@ -239,7 +239,7 @@ p img{
     border-radius: 8px;
     .header-item-left{
         width:20%;
-        padding: 5%;
+        padding: 10px;
         .left-box{
             width: 100%;
             height: 100%;
@@ -262,7 +262,7 @@ color: #FFFFFF;
     }
     .header-item-right{
         width:80%;
-
+        margin: auto;
     }
     h2{
         font-family: Hind;
@@ -370,6 +370,45 @@ color: #FFFFFF;
         position: absolute; 
         //left: 0px;
         top: -60px;
+    }
+}
+
+.AuthorDesc-container{
+    background: #F7F7F7;
+    
+}
+.AuthorDesc-heading{
+    position: relative;
+    top: 15px;
+    h2{
+        font-family: Oswald;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        color: #999999;
+        text-transform:uppercase;
+    }
+}
+.AuthorDesc-body{
+    display: flex;
+    width:100%;
+    .AuthorDesc-left{
+        
+    }
+    .AuthorDesc-right{
+        margin: 20px 19px;
+        p{
+            padding: 0;
+            margin: 0;
+            font-family: Oswald;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 19px;
+            color: #333333;
+            
+        }
     }
 }
 

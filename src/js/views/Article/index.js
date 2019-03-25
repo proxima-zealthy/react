@@ -10,6 +10,9 @@ import Like from '../../components/Actionbuttons/Like'
 import Share from '../../components/Actionbuttons/Share'
 import Commentoverlay from '../../components/Actionbuttons/Commentoverlay'
 import Breadcrumbs from '../../components/Breadcrumbs';
+import AuthorDescription from './AuthorDesc'
+import Tags from './Tags';
+import RelatedArticles from 'components/RelatedArticles'
 import 'ArticlePage.scss';
 //import 'CommentBlocks.scss';
 
@@ -44,22 +47,20 @@ export default class Article extends Component {
 
       var viewportTop = window.pageYOffset || document.documentElement.scrollTop;
       var viewportBottom = viewportTop + window.innerHeight;
+      
 
-      return elementBottom > viewportTop && elementTop < viewportBottom;
+      //return elementBottom > viewportTop && elementTop < viewportBottom ;
+      return elementTop < viewportBottom ;
     }
     var el=document.getElementById("comment-block");
     
     var getSection=isScrolledIntoView(el);
-    if(getSection){
-      console.log("i can find u",getSection)
-      //console.log(window.pageYOffset)
+    
+    if(getSection ){
       this.setState({hidden:true});
-      //window.innerHeight=window.innerHeight-60;
     }
     else{
-      console.log("you are gone ",getSection)
-      //this.setState({bottomnav:true});
-      //window.innerHeight=window.innerHeight+60;
+      this.setState({hidden:false});
     }  
 
   }
@@ -91,24 +92,26 @@ export default class Article extends Component {
   render() {
     const {loading, error } = this.props;
     const articleData=this.props.data
+    
     const ArticleId = this.props.match.params.id;
     const comments=articleData.comments;
     const baseRouteWithArticleId = routes.ARTICLE.path.replace(':id', ArticleId);
     const BreadcrumbsItems=[ {"id":1, "name": "Skin"},{"id":2, "name": "Acne"},{"id":3, "name": "the article "}];
     return (
       <div>
-        <Breadcrumbs items={BreadcrumbsItems}/>
+        <Breadcrumbs items={ BreadcrumbsItems }/>
         {/* the body of article  */}
 
         <ArticleContent data={ articleData }/>
         {/*here goes the footer overlay section inside the pagecontent */}
-        <div className="action-bar">
-            <div className="action-bar-item"><Commentoverlay/></div>
-            <div className="action-bar-item"><Share/></div>
-            <div className="action-bar-item" style={{marginTop: '15px'}}><Like/></div>
-            <div className="action-bar-item"><Whatsapp/></div>
-        </div>
+        <BottomBar isStatic={true}>
+              <Commentoverlay/>
+              <Like/>
+              <Share/>
+              <Whatsapp/>
+        </BottomBar>
         {/*the latest comments area inside article page  */}
+
         <div id="comment-block"className="comment-block">
           <ul>
             {comments.map(( comment )=>(
@@ -123,13 +126,16 @@ export default class Article extends Component {
             </div> 
           </NavLink>
         </div>
-        <ArticleContent data={ articleData }/>
+        <AuthorDescription/>
+        
+        <Tags tags={ articleData.content.tags } />
+        {/*<RelatedArticles feeds={ feedData }/>*/}
         {/*bottom footer area as overlay */}
           <BottomBar controllerClass={ this.state.hidden }>
               <Commentoverlay/>
-              <Whatsapp/>
               <Like/>
               <Share/>
+              <Whatsapp/>
           </BottomBar> 
       </div>
       
