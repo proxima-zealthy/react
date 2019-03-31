@@ -1,23 +1,17 @@
 import React, { Component } from 'react'
 import ReactDOM from "react-dom";
-import Carousel from '../components/Carousel';
+import Video from 'views/VideoLanding';
 
 
-export class ScrollTest extends Component {
-    constructor(props) {
-        super();
-        this.state = {
-            scrolled : false
-        } 
-    }
+
+export default class ScrollTest extends Component {
+
     
   render() {
     return (
         <div>
-            <Carousel/>
+           <Video/>
         </div>
     )
   }
 }
-
-export default ScrollTest

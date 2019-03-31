@@ -1,0 +1,33 @@
+.quicklink-container{
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.quicklink-items{
+    padding: 10px 0;
+    margin: 0;
+    display: inline;
+    li{
+        color: #2D9CDB;
+        display: inline;
+        padding-right: 2px;
+        a{
+            font-family: EB Garamond;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 17px;
+            line-height: 24px;
+            text-decoration-line: underline;
+            color: #2D9CDB;
+        }
+    }
+    li:before{
+        content: "|";
+        color:#ccc;
+    }
+    
+}
+.fa-arrow-left{
+    display: inline;
+    color: #777777;
+}

@@ -7,6 +7,10 @@
   height: 48px;  
   z-index: 1; 
 }
+button:hover{
+  background: none!important;
+  outline:none;
+}
 
 .toolbar__navigation {
   display: flex;
@@ -27,6 +31,9 @@
 }
 .toolbar__logo {
   margin-left: 1rem;
+  a:hover{
+    color:white;
+  }
 }
 .toolbar__logo a {
   color: white;
@@ -43,7 +50,7 @@
 }
 
 .toolbar_navigation-items a:hover, .toolbar_navigation-items a:active {
-  color: coral;
+  //color: coral;
 }
 
 .search-container {
@@ -61,6 +68,7 @@
   width: 60%;
   background: transparent;
   color: white;
+  outline:none;
 }
 
 ::placeholder { 
@@ -81,10 +89,17 @@
 }
 
 .search-container button:hover {
-  background: green;
+ // background: green;
 }
-.Signin{
+.signin{
   border-bottom: 1px solid white;
+  font-family: Oswald;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 19px;
+
+color: #FFFFFF;
 }
 
 @media screen and (max-width: 600px) {

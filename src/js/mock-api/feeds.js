@@ -1,10 +1,10 @@
 export default function prepareFeeds () {
   return {
-    content: ArticlesList
+    content: articlesList
   };
 }
 
-const ArticlesList = [
+const articlesList = [
 
   {
     "id": 1,
@@ -16,24 +16,6 @@ const ArticlesList = [
     "views":"1200",
     "comments":"hujhj",
     "likes":"1500",
-    "navigationtabs":[
-      {
-        "id":1,
-        "tab-name":"about"
-      },
-      {
-        "id":2,
-        "tab-name":"home & remedies"
-      },
-      {
-        "id":3,
-        "tab-name":"Tips"
-      },
-      {
-        "id":3,
-        "tab-name":"Q & A"
-      }
-    ],
     "articletags":[
       {
         "id":1,
@@ -55,29 +37,12 @@ const ArticlesList = [
     "meta-tags":"",
     "title": "जयपुर इंडियन ऑयल डिपो अग्निकांड",
     "desc": "कालिंजर दुर्ग, भारतीय राज्य उत्तर प्रदेश के बांदा जिला स्थित एक दुर्ग है। बुन्देलखण्ड क्षेत्र में विंध्य पर्वत पर स्थित.",
-    "thumbnail":"https://static.toiimg.com/photo/67144956.cms",
+    "thumbnail":"https://cdn.makeawebsitehub.com/wp-content/uploads/2017/03/examples-of-blog.jpg",
     "author":"proxima",
     "views":"1200",
     "comments":"hujhj",
     "likes":"1500",
-    "navigationtabs":[
-      {
-        "id":1,
-        "tab-name":"about"
-      },
-      {
-        "id":2,
-        "tab-name":"home & remedies"
-      },
-      {
-        "id":3,
-        "tab-name":"Tips"
-      },
-      {
-        "id":3,
-        "tab-name":"Q & A"
-      }
-    ],
+    
     "articletags":[
       {
         "id":1,
@@ -98,29 +63,11 @@ const ArticlesList = [
     "meta-tags":"",
     "title": "article-3",
     "desc": "कालिंजर दुर्ग, भारतीय राज्य उत्तर प्रदेश के बांदा जिला स्थित एक दुर्ग है। बुन्देलखण्ड क्षेत्र में विंध्य पर्वत पर स्थित.",
-    "thumbnail":"https://static.toiimg.com/photo/67144956.cms",
+    "thumbnail":"https://cdn.makeawebsitehub.com/wp-content/uploads/2017/03/examples-of-blog.jpg",
     "author":"proxima",
     "views":"1200",
     "comments":"hujhj",
     "likes":"1500",
-    "navigationtabs":[
-      {
-        "id":1,
-        "tab-name":"about"
-      },
-      {
-        "id":2,
-        "tab-name":"home & remedies"
-      },
-      {
-        "id":3,
-        "tab-name":"Tips"
-      },
-      {
-        "id":3,
-        "tab-name":"Q & A"
-      }
-    ],
     "articletags":[
       {
         "id":1,
@@ -141,29 +88,11 @@ const ArticlesList = [
     "meta-tags":"",
     "title": "article-1",
     "desc": "कालिंजर दुर्ग, भारतीय राज्य उत्तर प्रदेश के बांदा जिला स्थित एक दुर्ग है। बुन्देलखण्ड क्षेत्र में विंध्य पर्वत पर स्थित.",
-    "thumbnail":"https://static.toiimg.com/photo/67144956.cms",
+    "thumbnail":"https://cdn.makeawebsitehub.com/wp-content/uploads/2017/03/examples-of-blog.jpg",
     "author":"proxima",
     "views":"1200",
     "comments":"hujhj",
     "likes":"1500",
-    "navigationtabs":[
-      {
-        "id":1,
-        "tab-name":"about"
-      },
-      {
-        "id":2,
-        "tab-name":"home & remedies"
-      },
-      {
-        "id":3,
-        "tab-name":"Tips"
-      },
-      {
-        "id":3,
-        "tab-name":"Q & A"
-      }
-    ],
     "articletags":[
       {
         "id":1,

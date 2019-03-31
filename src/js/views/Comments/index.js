@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { fetchCommentsByArticleId,addCommentByEntity } from 'reducers/comments'
+import { fetchCommentsByArticleId, addCommentByEntity } from 'reducers/comments'
 import './Comment-page.scss'
 
 @connect(state => ({ ...state.comments }), {
@@ -12,7 +12,9 @@ export default  class Comments extends Component {
     super(props)
   
     this.state = {
-       comment:""
+       comment: "",
+       comments: [],
+       commentData: []
     }
     this.handleCommentChange=this.handleCommentChange.bind(this);
   }
@@ -25,14 +27,29 @@ export default  class Comments extends Component {
         console.log('Display notification on error...', err);
       }); // Dispatch action for store passed from server
   }
+
   componentDidMount() {
     // Check if data already exits from server side state
+    this.setState({
+      comments: this.props.data.comments
+    }, () => {
+      var comment_cotainer = [];
+      this.state.comments.map((d, i) => {
+        comment_cotainer.push(
+          <Comment key={i} id={i} user={d.user} text={d.text} />
+        )
+      })
+      this.setState({
+        commentData: comment_cotainer
+      });
+    })
     if (!this.props.data) {
       const articleId = this.props.match.params.id;
 
       this.props.fetchCommentsByArticleId(articleId)
         .then(res => {
           console.log('Promise chain...', res);
+          
         })
         .catch(err => {
           // TODO: Redirect to Not Found page for topics
@@ -40,6 +57,7 @@ export default  class Comments extends Component {
         });
     }
   }
+
   handleCommentChange(e) {
     this.setState({ comment:e.target.value });
   }
@@ -48,44 +66,23 @@ export default  class Comments extends Component {
     e.preventDefault();
     const comment=e.target[0].value;
     //addCommentByEntity(comment)
-    //console.log("comment: " +e.target[0].value);
-    
-    
+    //console.log("comment: " +e.target[0].value); 
   }
+
   render() {
+
     //const comments=this.props.data.comments
     //console.log(comments);
     //const articleId = this.props.match.params.id;
     return (
       <div>
         <div className="title">
-                    <p>COMMENTS (12) </p>
-                </div>
-                <div className="border-box">
-                    <div className="comment-box">
-                        <div className="profile-pic">
-                            <img src="kjkjk"/>
-                        </div>
-                        <div className="profile-name">
-                            <p>Druti Singh</p>
-                        </div>
-                        <div className="date-time">
-                            <p>12:43PM. 12th Jan '19</p>
-                        </div>
-                        <div className="user-comment">
-                            <p>Its a lovely article. Very informative and useful.</p>
-                        </div>
-                        <div className="reply-btn">
-                            <li className="dropdown">
-                                <a href="javascript:void(0)" className="dropbtn">Reply</a>
-                                <div className="dropdown-content">
-                                    <input type="text" id="name" placeholder="Write a comment..." />
-                                    <button>Submit</button>
-                                </div>
-                            </li>
-                        </div>
-                    </div>
-                </div>
+          <p>COMMENTS (12) </p>
+            </div>
+            
+          {this.state.commentData}
+          <br />
+          <br />
         <div>
           {/*comments.map((comment)=>(
             <ul>
@@ -99,11 +96,51 @@ export default  class Comments extends Component {
             <button type="submit">comment</button>
           </form>
           
-
         </div>
       </div>
 
      
     )
   }
+}
+
+
+const Comment = ({id, user, text }) => {
+  const show = (e) => {
+    var d = document.getElementById(e);
+    console.log(d.style.display);
+    if(d.style.display === "none"){
+      d.style.display = "flex";
+    }else{
+      d.style.display = "none";
+    }
+  }
+
+  return(
+    <div className="border-box">
+        <div className="comment-box">
+            <div className="profile-pic">
+                <img src="kjkjk"/>
+            </div>
+            <div className="profile-name">
+                <p>{user}</p>
+            </div>
+            <div className="date-time">
+                <p>12:43PM. 12th Jan '19</p>
+            </div>
+            <div className="user-comment">
+              <p>{text}</p>
+            </div>
+            <div className="reply-btn">
+                <li className="dropdown">
+                    <span href="javascript:void(0)" row="2" onClick={() => show(id)} className="dropbtn">Reply</span>
+                </li>
+            </div>
+                  <div id={id} className="dropdown-content">
+                  <input autocomplete="off" type="text" id="name" placeholder="Write a comment..." />
+                  <button>Submit</button>
+                </div>
+        </div>
+    </div>
+  )
 }

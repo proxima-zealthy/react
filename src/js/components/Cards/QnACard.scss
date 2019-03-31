@@ -1,0 +1,140 @@
+.QA-Feed-Container{
+    a{
+      text-decoration: none;
+    }
+}
+.QACard-container {
+    margin: auto;
+    width:328px;
+    background: #ffffff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+
+  .spacer {
+    flex: 1;
+}
+
+  .QACard-title {
+    width:100%;
+    color:green;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-style: normal;
+    font-weight: normal;
+    //line-height: 20px;
+    font-size: 12px;
+    letter-spacing: -0.6px;
+   // border-bottom: 0.018px solid lightgrey;
+    }
+    
+  .QACard-question {
+   // width: 312px;
+    margin: auto;
+    height: auto;
+    //border-bottom: 0.018px solid lightgrey;
+    padding: 7px;
+    font-family: EB Garamond Regular;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.6px;
+    
+    color: #333333;
+  }
+
+  hr.QACard-hr {
+    border-top: 1px solid rgba(228, 225, 225, 0.952);
+    width: 95%;
+    margin: auto;
+  }
+  .QACard-container:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .QACard-photo .QACard-img {
+    border-radius: 50%;
+    height:10%;
+    vertical-align: middle;
+    float:left;
+    background: green;
+  }
+  
+  .QACard-photo {
+    //display:block;
+    padding-top: 7px;
+    padding-left: 7px;
+    padding-right: 0;
+    margin: 0;
+    width: 100%;
+    display:flex;
+    color: #333333;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 19px;
+    font-size: 12px;
+    font-family: oswald;
+    }
+    
+  .QACard-profile {
+    padding: 0px 8px;
+    float: left;
+    height: 50px;
+    
+  }
+  .QACard-profile h4 {
+    margin: 0;
+    }
+
+  .QACard-profile p {
+    margin: 0;
+  }
+
+  .QACard-desc {
+    display: block;
+    color: #333333;
+    text-align: justify;
+    font-family: EB Garamond Regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.6px;
+    padding-top: 0px;
+    padding-right: 7px;
+    padding-left: 7px;
+    padding-bottom: 7px;
+    margin-bottom: 0px;
+    }
+
+    .QACard-desc p {
+      margin-bottom: 0px;
+    }
+    .feedcard-bottom{
+        margin: auto;
+        padding: 0;
+        height: 50px;
+        overflow: hidden;
+        display: flex;
+        .feedcard-bottom-item{
+            flex:1;
+        }
+        color:#828282;
+    }
+    .feedcard-bottom-inner{
+        font-size: 15px;
+    }
+    .QACard-thumbnail{
+      border-radius: 10px;
+      padding: 7px;
+    }
+    .readmore{
+      color: green;
+  }
+    .image-hidden{
+      display: none;
+    }
+  

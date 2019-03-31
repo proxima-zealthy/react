@@ -1,7 +1,8 @@
 import MOCKAPI from 'mock-api';
-import mockTopicData from 'mock-api/topics';
+import mockTopicData ,{ qaByQuestionId } from 'mock-api/topics';
 
 const GET_TOPIC = 'GET_TOPIC';
+const GET_QA = 'GET_QA';
 
 export function fetchTopicById(id) {
   return {
@@ -10,10 +11,18 @@ export function fetchTopicById(id) {
   };
 }
 
+export function fetchQAByQustionId(id){
+  return {
+    type:GET_QA,
+    payload: MOCKAPI(qaByQuestionId(id))
+  }
+}
+
 const initialState = {
   loading: false,
   error: null,
-  data: null
+  data: null,
+  qaById:null
 };
 
 export default function(state = initialState, action) {
@@ -36,6 +45,25 @@ export default function(state = initialState, action) {
         ...state,
         loading: false,
         data: action.payload,
+      };
+      case `${GET_QA}::PENDING`:
+      return {
+        ...initialState,
+        loading: true
+      };
+
+    case `${GET_QA}::ERROR`:
+      return {
+        ...state,
+        loading: false,
+        error: action.error.message,
+      };
+
+    case `${GET_QA}::SUCCESS`:
+      return {
+        ...state,
+        loading: false,
+        qaById: action.payload,
       };
 
     default:

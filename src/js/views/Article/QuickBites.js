@@ -10,6 +10,7 @@ export default  class ArticleQuickBites extends Component {
           </div>
           <div className="quickbites-body">
             <ul>
+              {/* to be fetched from backend*/}
               <li>
                 <p> हजारों वर्षो से बर्थ कंट्रोल के तरीकों का प्रयोग किया जा रहा है।</p>
               </li>

@@ -28,7 +28,7 @@ export default class Like extends Component {
     
     render() {
       return (
-        <div className="like-button" style={{position:'relative',top:'10px'}}>
+        <div className="like-button" style={{position:'relative',top:'5px'}}>
           <LikeSection incrementLike={this.incrementLike} likes={this.state.likes} liked={this.state.liked}/>
         </div>
       )

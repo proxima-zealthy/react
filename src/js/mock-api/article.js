@@ -4,7 +4,7 @@ export default function prepareArticleForId (id) {
     content: articleContent(id),
     views:'1500',
     likes:'1200',
-    comments: comments
+    comments: comments,
   };
 }
 
@@ -53,10 +53,7 @@ export var comments= [
     "user":"rose",
     "text":"life is beutiful "
   },
-
 ]
-
-
 export function removeCommentById(commentId){
   function remove(id){
     for(var i = comments.length - 1; i >= 0; i--) {
@@ -69,7 +66,6 @@ export function removeCommentById(commentId){
   
   return remove(commentId);
 }
-
 export function addComment(comment){
   var commentid=comments.length+1;
   newcomment={
@@ -80,7 +76,3 @@ export function addComment(comment){
   comments.push(newcomment)
   return comments;
 }
-
-
-
-

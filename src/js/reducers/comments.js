@@ -1,5 +1,5 @@
 import MOCKAPI from 'mock-api';
-import mockArticleData,{ removeCommentById }  from 'mock-api/article';
+import mockArticleData,{ removeCommentById,addComment}  from 'mock-api/article';
 
 const GET_COMMENTS = 'GET_COMMENTS';
 const ADD_COMMENT='ADD_COMMENT';
@@ -19,10 +19,17 @@ export function removeCommentByEntityId(id){
     payload: MOCKAPI(removeCommentById(id))
   }
 }
+export function addCommenttoList(comment){
+  return{
+    type:ADD_COMMENT,
+    payload:MOCKAPI(addComment(comment))
+  }
+}
 
 const initialState = {
   loading: false,
   error: null,
+  comments:null,
   data: null,
 
 };
@@ -64,6 +71,25 @@ export default function(state = initialState, action) {
         ...state,
         loading: false,
         error: action.error.message,
+      };
+      case `${ADD_COMMENT}::PENDING`:
+      return {
+        ...initialState,
+        loading: true
+      };
+
+    case `${ADD_COMMENT}::ERROR`:
+      return {
+        ...state,
+        loading: false,
+        error: action.error.message,
+      };
+
+    case `${ADD_COMMENT}::SUCCESS`:
+      return {
+        ...state,
+        loading: false,
+        comments: action.payload,
       };
 
   

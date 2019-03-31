@@ -1,0 +1,235 @@
+.QA-wrapper{
+    background: #dadada33;
+    //opacity: 0.2;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.QA-container{
+    padding:15px 12px;
+    position: relative;
+    top: -15px; 
+}
+.hr-line {
+    padding: 0px;
+    border: 0;
+    clear: both;
+    display: block;
+    width: 100%;
+    background-color: #ccc;
+    height: 1px;
+    margin: 0;
+    height: 1px;
+  }
+.QA-header-heading{
+   text-align: left;
+   color: #655a5a;
+   margin: 10px;
+   //position: relative;
+   //top: 10px;
+   h1{
+       padding: 0;
+       margin: 0;
+   }
+}
+.QA-heading-inner{
+    
+    font-family: EB Garamond;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.6px;
+
+    color: #333333;
+
+
+}
+.QA-author{
+    padding: 5px 0;
+    margin: 0;
+    
+    
+}
+.QA-body{
+    text-align:left;
+    font-family: Hind;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 26px;
+    font-size: 16px;
+    margin-top: 14px;
+    color: #666666;
+    }
+.QA-banner-image{
+    border-radius: 8px;
+    width: 100%;
+    /*give only for desktop height: 400px;*/
+    display:block;
+    height: 200px;
+}
+.QA-tags{
+    display: flex;
+    padding-top: 10px
+    
+}
+.QA-tags p {
+    padding: 0 10px 0 10px;
+    border:solid 1px;
+    border-radius: 20px;
+    margin-left: 10px;
+    background:#e99cea;
+    font-size: 10px;
+}
+.QA-tags a{
+    text-decoration: none!important;
+}
+p img{
+    width: 100%;
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.Authordetails-Area{
+    width:100%;
+
+    display: flex;
+   height:40px;
+   color:#333333;
+   font-family: Oswald;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 19px;
+    font-size: 14px;
+    margin-top: 9px;
+
+}
+.author{
+    display: flex;
+  width:80%;
+  align-items:center;
+  p{
+      
+      align-items:center;
+  }
+  .AuthorName{
+      float:right;
+  }
+  .AuthorAvatar{
+      float:left;
+  }
+}
+.views{
+    display: flex;
+    width:20%;
+    align-items:center;
+    p{
+        
+        align-items:center;
+    }
+    .left{
+        float: left;
+    }
+    .right{
+        float: right;
+    }
+}
+
+
+.QA-Tags-container{
+    ul{
+        display: flex;
+        padding: 5px;
+    }
+    li{
+        background: #b75264;
+        padding: 4px;
+        list-style: none;
+        color: white;
+        border-radius: 10px;
+        text-decoration: none;
+        margin: 5px;
+    }
+    a{
+        text-decoration: none;
+    }
+}
+.action-bar{
+    background-color:white;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
+    color:#ccc;
+    align-items: center;
+    //z-index: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-content: center;
+    padding: 0;
+}
+.action-bar-item{
+    flex:1;
+    text-align: center; 
+}
+
+/*#section-1{
+    position: relative;
+  border: solid 1px green;
+  height: 60px;
+}
+*/
+.comment-block{
+    padding-bottom: 23px;
+}
+.section-wrapper{
+    position: relative;
+    a{
+        position: absolute; 
+        //left: 0px;
+        top: -60px;
+    }
+}
+
+.AuthorDesc-container{
+    background: #F7F7F7;
+    
+}
+.AuthorDesc-heading{
+    position: relative;
+    top: 15px;
+    h2{
+        font-family: Oswald;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        color: #999999;
+        text-transform:uppercase;
+    }
+}
+.AuthorDesc-body{
+    display: flex;
+    width:100%;
+    .AuthorDesc-left{
+        
+    }
+    .AuthorDesc-right{
+        margin: 20px 19px;
+        p{
+            padding: 0;
+            margin: 0;
+            font-family: Oswald;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 19px;
+            color: #333333;
+            
+        }
+    }
+}
+

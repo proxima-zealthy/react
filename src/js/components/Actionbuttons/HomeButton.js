@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import ViewsSvg from 'svg/views.svg'
+import HomeIcon from 'svg/ic_home.svg'
 
 export default class HomeButton extends Component {
   render() {
     return (
         <div>
-        
-        <a href="/"><ViewsSvg width={32}/></a>
-        
+        <a href="/" style={{marginTop: '2px'}}>
+            <HomeIcon/>
+        </a>
         </div>
     )
   }

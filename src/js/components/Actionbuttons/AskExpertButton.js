@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import ViewsSvg from 'svg/views.svg'
+import AskIcon from 'svg/ic_ask.svg';
 
 export default class AskExpertButton extends Component {
   render() {
     return (
         <div>
-        
-        <a href="/"><ViewsSvg width={32}/></a>
-        
+          <a href="/" style={{marginTop: '2px'}}>
+            <AskIcon/>
+          </a>
         </div>
     )
   }

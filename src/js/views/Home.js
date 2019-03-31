@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import Feeds from '../views/Feeds';
 import { fetchAllFeeds} from "reducers/feeds";
-import RelatedArticles from 'components/RelatedArticles'
+import RelatedVideos from 'components/RelatedVideos';
 
 
 @connect(state => ({ ...state.feeds }), {
@@ -35,7 +35,7 @@ import RelatedArticles from 'components/RelatedArticles'
     return (
       <div>
         <Feeds feeds={feedData}/>
-        <RelatedArticles feeds={ feedData }/>
+        <RelatedVideos feeds={ feedData }/>
       
       </div>
     )

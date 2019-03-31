@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import ViewsSvg from 'svg/views.svg'
+import CommunityIcon from 'svg/ic_groups.svg'
 
 export default class CommunityButton extends Component {
   render() {
     return (
         <div>
-        
-        <a href="/"><ViewsSvg width={32}/></a>
-        
+          <a href="/" style={{marginTop: '2px'}}>
+            <CommunityIcon/>
+        </a>
         </div>
     )
   }

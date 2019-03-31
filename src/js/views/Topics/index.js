@@ -9,16 +9,25 @@ import Tips from "./Tips";
 import HomeRemedies from "./HomeRemedies";
 import QnA from "./QnA";
 import { fetchTopicById } from "reducers/topic";
-import Footer from 'components/BottomnavMobile'
-import 'TopicPage.scss'
+import BottomBar from 'components/BottomnavMobile';
+import Whatsapp from 'components/Actionbuttons/Whatsapp.js';
+import Like from 'components/Actionbuttons/Like';
+import Share from 'components/Actionbuttons/Share';
+import Commentoverlay from 'components/Actionbuttons/Commentoverlay';
+import ExploreButton from 'components/Actionbuttons/ExploreButton';
+import AskExpertButton from 'components/Actionbuttons/AskExpertButton';
+import HomeButton from 'components/Actionbuttons/HomeButton';
+import CommunityButton from 'components/Actionbuttons/CommunityButton';
+
+import 'TopicPage.scss';
 
 function getUrl(baseRouteWithTopicId, tabName) {
   switch (tabName) {
     case 'about': return <Link to={`${baseRouteWithTopicId}/about`}>About</Link>;
     case 'tips': return <Link to={`${baseRouteWithTopicId}/tips`}>Tips</Link>;
     case 'videos': return <Link to={`${baseRouteWithTopicId}/videos`}>Videos</Link>;
-    case 'qa': return <Link to={`${baseRouteWithTopicId}/qa`}>QnA</Link>;
-    case 'home_remedies': return <Link to={`${baseRouteWithTopicId}/home_remedies`}>Home Remedies</Link>;
+    case 'Q & A': return <Link to={`${baseRouteWithTopicId}/qa`}>QnA</Link>;
+    case 'home & remedies': return <Link to={`${baseRouteWithTopicId}/home_remedies`}>Home Remedies</Link>;
   }
 }
 
@@ -63,7 +72,7 @@ export default class Topics extends Component {
     if (!data) {
       return TABSList;
     }
-
+    
     data.tabs.forEach(t => {
       const tabLink = getUrl(baseRouteWithTopicId, t);
 
@@ -71,7 +80,6 @@ export default class Topics extends Component {
         TABSList.push(tabLink);
       }
     });
-
     return TABSList;
   }
 
@@ -82,10 +90,11 @@ export default class Topics extends Component {
     const baseRouteWithTopicId = baseRoute.replace(':id', topicId);
 
     const TABS_LIST = this.renderTabsList();
-
+    const Path=this.props.location.pathname;
+    
     return (
       <div className="Topic-container">
-        <Tabs tabsList={TABS_LIST} customClass="Topic-Tabs" />
+        <Tabs tabsList={TABS_LIST} customClass="Topic-Tabs" currentPath={Path} />
 
         <Switch>
           <Route exact path={`${ baseRoute}/about`} component={ About } />
@@ -96,7 +105,12 @@ export default class Topics extends Component {
           <Redirect from={`${ baseRoute }*`} to={`${ baseRouteWithTopicId}/about`}/>
         </Switch>
 
-        <div style={{paddingTop:'60px'}}><Footer/></div>
+        <BottomBar >
+          <HomeButton/>
+          <ExploreButton/>
+          <CommunityButton/>
+          <AskExpertButton/>
+        </BottomBar>
       </div>
     )
   }

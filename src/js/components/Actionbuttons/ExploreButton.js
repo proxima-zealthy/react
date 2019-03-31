@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
-import ViewsSvg from 'svg/views.svg'
+import { NavLink } from 'react-router-dom';
+import routes from 'routes';
+import ExploreIcon from 'svg/ic_explore.svg'
 
 export default class ExploreButton extends Component {
   render() {
     return (
         <div>
-        
-        <a href="/"><ViewsSvg width={32}/></a>
-        
+          <NavLink to={routes.EXPLORE.path} style={{marginTop: '2px'}}>
+             <ExploreIcon/>
+          </NavLink>
+         
         </div>
     )
   }
 }
+

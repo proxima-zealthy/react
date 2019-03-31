@@ -2,9 +2,12 @@ import Home from 'views/Home';
 import Dummy_Member from 'views/Examples/Members';
 import Dummy_Counter from 'views/Examples/Counter';
 import Article from "views/Article";
-import Topics from 'views/Topics'
-import ScrollTest from 'views/ScrollTest'
-import Comments from 'views/Comments'
+import Topics from 'views/Topics';
+import ScrollTest from 'views/ScrollTest';
+import Comments from 'views/Comments';
+import QnA from 'views/QnALanding';
+import Explore from 'views/Explore';
+import Communities from 'views/Communities'
 
 
 export const publicPath = '/';
@@ -43,5 +46,17 @@ export default {
   COMMENTS: {
     path: `${ publicPath }article/:id/comments`,
     component: Comments
+  },
+  QANDA:{
+    path: `${ publicPath }QnA/:id`,
+    component: QnA    
+  },
+  EXPLORE:{
+    path: `${ publicPath }explore`,
+    component: Explore    
+  },
+  COMMUNITIES:{
+    path: `${ publicPath }communities`,
+    component: Communities    
   }
 };

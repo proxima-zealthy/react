@@ -5,6 +5,7 @@ import topic from 'reducers/topic';
 import article from 'reducers/article';
 import feeds from 'reducers/feeds';
 import comments from 'reducers/comments';
+import categories from 'reducers/categories';
 
 export default combineReducers({
   counter,
@@ -12,5 +13,6 @@ export default combineReducers({
   topic,
   article,
   feeds,
-  comments
+  comments,
+  categories
 });

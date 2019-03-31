@@ -15,12 +15,11 @@ export default class Videos extends Component {
   }
   
   render() {
-    const Videos=[]
-   const AllVideos=this.renderVideos(Videos);
-   //console.log('//........................',AllVideos)
+   const videos=[]
+   const allVideos=this.renderVideos(videos);
     return (
-      <div className="Videos-container">
-          <VideoFeeds videos={AllVideos}/>
+      <div className="Videos-container" style={{ padding: '0 20px'}}>
+          <VideoFeeds videos={allVideos}/>
       </div>
     )
   }

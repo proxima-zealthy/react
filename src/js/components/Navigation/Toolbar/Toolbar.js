@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import routes from 'routes';
-import SearchiconSvg from 'svg/searchicon.svg';
+import SearchiconSvg from 'svg/ic_search.svg';
 import DrawerToggleButton from '../SideDrawer/DrawerToggleButton';
 import 'Toolbar.scss';
 
@@ -25,7 +25,7 @@ export default props => (
       <div className="spacer"></div>
       <div className="toolbar_navigation-items">
         <ul>
-          <li className="Signin">
+          <li className="signin">
           <NavLink to="/">
               SIGN IN
           </NavLink>

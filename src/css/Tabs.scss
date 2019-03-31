@@ -8,5 +8,14 @@ ul.Tabs {
     border: none;
     color: #928686;
   }
+  .active{
+    background: lightgreen;
+    padding: 5px 12px;
+    border-radius: 15px;
+  }
+  a{
+    text-decoration: none;
+    color: #333333;
+  }
 }
 

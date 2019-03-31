@@ -1,0 +1,11 @@
+.VideoPage {
+    display: flex;
+  }
+  
+  
+  @media (max-width: 960px) {
+    .VideoPage {
+      flex-direction: column;
+    }
+  }
+ 

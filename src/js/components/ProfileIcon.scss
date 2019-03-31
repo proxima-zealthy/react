@@ -1,0 +1,38 @@
+.ProfileIcon-container .ProfileIcon-img {
+    border-radius: 50%;
+    height:10%;
+    vertical-align: middle;
+    float:left;
+    background: green;
+  }
+  
+  .ProfileIcon-container{
+    //display:block;
+    padding-top: 7px;
+    padding-left: 7px;
+    padding-right: 0;
+    margin: 0;
+    width: 100%;
+    display:flex;
+    color: #333333;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 19px;
+    font-size: 12px;
+    font-family: oswald;
+    }
+    
+  .Profile-desc{
+    padding: 0px 8px;
+    float: left;
+    height: 50px;
+    
+  }
+  .PProfile-desc h4 {
+    margin: 0;
+    }
+
+  .Profile-desc p {
+    margin: 0;
+  }
+

@@ -3,7 +3,7 @@ import Banner from './Banner';
 import QuickBites from './QuickBites';
 import SectionList from './SectionList'
 import Heading from './Heading';
-import ArticleAuthor from 'components/AuthorDetails/ArticleAuthor';
+import ArticleAuthor from 'components/AuthorDetails/Author';
 import ArticleAvatar from 'components/AuthorDetails/AuthorAvatar';
 import AllSection from './Sections';
 import ViewsSvg from 'svg/views.svg';
@@ -13,16 +13,16 @@ export default class ArticleContent extends Component {
     const article=this.props.data.content;
     const views=this.props.data.views;
     return (
-      <div className="Article-container">
+      <div className="article-container">
         {/**/}
         <article>
           {
             article && (
-              <div className="article">
+              <div className="article-main">
                 <Banner image={ article.image } />
 
                 <Heading title={ article.title }/>
-                {/*auther section */}
+                {/*article's author at top */}
                 <div className="Authordetails-Area">
                   <div className="author">
                       <p className="AuthorAvatar"><ArticleAvatar/></p>
@@ -36,7 +36,7 @@ export default class ArticleContent extends Component {
                 <hr className="hr-line" ></hr>
                 <QuickBites/>
                 {/*article introduction  */}
-                <div className="Article-intro-container">
+                <div className="article-intro-container">
                     <div className="article-intro-heading">
                         <h2> हजारों वर्षो से बर्थ कंट्रोल के तरीकों का प्रयोग किया जा रहा है। लोगों में गर्भनिरोधक विकल्पों को लेकर कईj</h2>
                     </div>
@@ -44,11 +44,10 @@ export default class ArticleContent extends Component {
                         <p>{article.body}</p>
                     </div>
                 </div>
+                {/* send data to sectionlist and individual section */}
                 <SectionList/>
-                <AllSection body={ article.body }/>
-                
-                
-              </div>
+                <AllSection body={ article.body }/>  
+             </div>
             )
           }
         </article>
